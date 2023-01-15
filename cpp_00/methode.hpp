@@ -9,6 +9,8 @@ class Window
         Window() = default;
         Window(std::string t);
         void run() const noexcept;
+        std::string getTitle();
+        void setTitle(std::string title);
 
     private:
         std::string title;
