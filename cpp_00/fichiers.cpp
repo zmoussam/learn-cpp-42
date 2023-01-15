@@ -17,7 +17,7 @@ int main()
         std::cout << name << std::endl;
 
         f >> name;
-        std::cout << name << std::endl; 
+        std::cout <<  name << std::endl; 
     }
     f.close();  
 
