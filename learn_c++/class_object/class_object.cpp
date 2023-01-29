@@ -1,4 +1,4 @@
-#include "point.hpp"
+#include "Point.hpp"
 #include<iostream>
 
 Point::Point()
@@ -21,6 +21,6 @@ int main()
     Point p;
 
     std::cout << "hi" << std::endl; 
-    //Point p2 = p;
+    Point p2 = p;
     return 0;
 }
