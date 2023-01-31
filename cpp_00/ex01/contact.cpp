@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 21:35:39 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/01/31 20:40:12 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/01/31 22:25:32 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ std::string contact::getNickName(void) const
     return this->nickName;
 }
 
-int contact::getPhoneNumber(void) const 
+std::string contact::getPhoneNumber(void) const 
 {
     return this->phoneNumber;
 }
@@ -54,29 +54,94 @@ std::string contact::getDarkestSecret(void) const
 {
     return this->darkestSecret;
 }
+int _isallnum(std::string phoneNumber)
+{ 
+    int i = 0;
+    while(phoneNumber[i])
+    {
+        if ((phoneNumber[i] < 48 || phoneNumber[i] > 57) 
+        && (phoneNumber[i] != '+'))
+            return 1;
+        i++;  
+    }
+    return (0);
+}
+int isVide(std::string newChamp)
+{
+    int i = 0;
 
+    if (newChamp[i] == '\0')
+        return 1;
+    while(newChamp[i])
+    {
+        if (newChamp[i] != 32)
+            return 0;
+        i++;
+    }
+    return 1;
+}
 void contact::setFirstName(std::string _firstName)
 {
+    std::cout << "First Name : ";
+    getline(std::cin, _firstName);
+    while(isVide(_firstName))
+    {
+        std::cout << "cannot add empty field !!" << std::endl;
+        std::cout << "First Name : ";
+        getline(std::cin, _firstName);
+    }
     this->firstName = _firstName;
 }
 
 void contact::setLastName(std::string _lastName)
 {
+    std::cout << "Last Name : ";
+    getline(std::cin, _lastName);
+    while(isVide(_lastName))
+    {
+        std::cout << "cannot add empty field !!" << std::endl;
+        std::cout << "Last Name : ";
+        getline(std::cin, _lastName);
+    }
     this->lastName = _lastName;
 }
 
 void contact::setNickName(std::string _nickName)
 {
+    std::cout << "Nick Name : ";
+    getline(std::cin, _nickName);
+    while(isVide(_nickName))
+    {
+        std::cout << "cannot add empty field !!" << std::endl;
+        std::cout << "Nick Name : ";
+        getline(std::cin, _nickName);
+    }
     this->nickName = _nickName;
 }
 
 void contact::setDarkestSecret(std::string _darkestSecret)
 {
+    std::cout << "Darkest Secret : ";  
+    getline(std::cin, darkestSecret);
+    while(isVide(darkestSecret))
+    {
+        std::cout << "cannot add empty field !!" << std::endl;
+        std::cout << "Darkest Secret : ";
+        getline(std::cin, darkestSecret);
+    }
     this->darkestSecret = _darkestSecret;
 }
 
-void contact::setFirstName(int _phoneNumber)
+void contact::setPhoneNumber(std::string _phoneNumber)
 {
+    std::cout << "Phone Number : ";
+    getline(std::cin, _phoneNumber);
+    while(isVide(_phoneNumber) || _isallnum(_phoneNumber))
+    {
+        std::cout << "cannot add empty field !!\njust digits required !!" << std::endl;
+        std::cout << "Phone Number : ";
+        getline(std::cin, _phoneNumber);
+    }
     this->phoneNumber = _phoneNumber;
 }
 void    contact::addIndex(void)

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 21:33:35 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/01/31 20:50:38 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/01/31 22:40:39 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,24 @@ void phoneBook::searchContacts(void) const
         i++;
     }
 }
-  void addContact(void)
-  {
-        std::string firstName;
-        std::string lastName;
-        std::string nickName;
-        std::string darkestSecret;
-        std::string phonenumber;
+
+void phoneBook::addContact(void)
+{
+    std::string firstName;
+    std::string lastName;
+    std::string nickName;
+    std::string darkestSecret;
+    std::string phonenumber;
+    int index = contact::getIndex();
+    if (index == 8)
+        index = 0; 
+    this->contacts[index].setFirstName(firstName);
+    this->contacts[index].setLastName(lastName);
+    this->contacts[index].setNickName(nickName);
+    this->contacts[index].setPhoneNumber(phonenumber);
+    this->contacts[index].setDarkestSecret(darkestSecret);
         
-        getline(std::cin, firstName);
-        getline(std::cin, lastName);
-        getline(std::cin, nickName);
-        getline(std::cin, darkestSecret);
-        getline(std::cin, phonenumber);
-        if (contact::getIndex() < 7)
-            contact::addIndex();
-  }
+    if (index < 7)
+        contact::addIndex();
+    // else if(index > 7)
+}
