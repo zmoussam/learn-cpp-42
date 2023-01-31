@@ -6,7 +6,28 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 21:33:37 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/01/29 21:33:38 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/01/31 19:54:36 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef __PHONEBOOK__
+    #define __PHONEBOOK__
+#include<iostream>
+#include "contact.hpp"
+#include<string>
+
+using namespace std;
+class phoneBook
+{
+    public:
+        phoneBook(void);
+        ~phoneBook(void);
+        void searchContacts(void) const;
+        void addContact(contact newContact);
+        
+    private:
+        contact contacts[8];
+           
+};
+
+#endif
