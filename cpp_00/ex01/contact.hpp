@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 21:35:36 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/01/31 22:21:45 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:12:24 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
     #define __CONTACT__
 
 #include<iostream>
+
+int isVide(std::string newChamp);
+int _isallnum(std::string phoneNumber);
 
 class contact
 {
@@ -31,6 +34,7 @@ class contact
         void setDarkestSecret(std::string _darkestSecret);
         void setPhoneNumber(std::string _phoneNumber);
         static int getIndex(void);
+        static void setIndex(int _index);
         static void addIndex(void);
     
     private:

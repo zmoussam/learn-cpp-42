@@ -6,7 +6,7 @@
 #    By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/29 21:36:51 by zmoussam          #+#    #+#              #
-#    Updated: 2023/01/31 18:45:59 by zmoussam         ###   ########.fr        #
+#    Updated: 2023/02/01 15:47:27 by zmoussam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,10 +26,10 @@ ${NAME}: ${OBJ}
 	$(CC) -o ${NAME} ${OBJ} 
 	
 clean:
-	rm ${OBJ}
+	rm -rf ${OBJ}
 	
 fclean:
-	rm ${NAME} ${OBJ}
+	rm -rf ${NAME} ${OBJ}
 
 re: fclean all
 
