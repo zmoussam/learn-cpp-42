@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 21:33:37 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/01/31 21:34:40 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:58:21 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "contact.hpp"
 #include<string>
 
-using namespace std;
 class phoneBook
 {
     public:
@@ -26,8 +25,7 @@ class phoneBook
         void addContact(void);
         
     private:
-        contact contacts[8];
-           
+        contact contacts[8];   
 };
 
 #endif
