@@ -6,23 +6,26 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 20:06:30 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/02/01 20:14:05 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/02/18 23:40:43 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __ZOMBIE__
-    #define __ZOMBIE
-    
-#include<iostream>
+#define __ZOMBIE__
 
-class Zombie
-{
+#include <iostream>
+
+class Zombie{
+    
     public:
-        Zombie(void);
-        ~Zombie(void);
-        void announce(void);     
+        Zombie();
+        ~Zombie();
+        void announce(void);
+        void setName(std::string _name);
     private:
-        std::string name;      
+        std::string name; 
 };
 
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 #endif
