@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 01:25:40 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/02/20 17:15:22 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/02/20 17:25:01 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/02/20 17:28:06 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<iostream>
-#include<fstream>
-#include "Replace.hpp"
+#ifndef __HARL__
+#define __HARL__
 
-int main(int argc, char **argv)
-{
-    Replace _replace; 
-    
-    if (argc != 4)
-        std::cout << "wrong argument !!" << std::endl;
-    else if (_replace.setInputFile(argv[1]) && _replace.setOutputFile(std::string(argv[1]) + ".replace") \
-        && !std::string(argv[2]).empty()) 
-        _replace.readAndRplace(argv[2], argv[3]);
-}
+#include<iostream>
+class Harl
+{       
+    public:
+       void debug(void);
+       void info(void);
+       void warning(void);
+       void error(void);
+       void complain(std::string level);
+};
+
+#endif

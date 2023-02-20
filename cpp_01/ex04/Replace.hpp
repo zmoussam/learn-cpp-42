@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 01:25:40 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/02/20 17:15:22 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/02/20 15:27:10 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/02/20 16:49:25 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef __REPLACE__
+#define __REPLACE__
+
 #include<iostream>
 #include<fstream>
-#include "Replace.hpp"
 
-int main(int argc, char **argv)
+class Replace
 {
-    Replace _replace; 
-    
-    if (argc != 4)
-        std::cout << "wrong argument !!" << std::endl;
-    else if (_replace.setInputFile(argv[1]) && _replace.setOutputFile(std::string(argv[1]) + ".replace") \
-        && !std::string(argv[2]).empty()) 
-        _replace.readAndRplace(argv[2], argv[3]);
-}
+    private:
+        std::ifstream inputFile;
+        std::ofstream outputFile;
+    public:
+        Replace();
+        ~Replace();
+        int setOutputFile(const std::string outPutFilePath);
+        int setInputFile(const std::string inputFilePath);
+        void readAndRplace(std::string oldStr, std::string newStr);
+};
+
+#endif

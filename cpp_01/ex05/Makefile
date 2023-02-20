@@ -5,15 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/20 01:25:05 by zmoussam          #+#    #+#              #
-#    Updated: 2023/02/20 17:19:45 by zmoussam         ###   ########.fr        #
+#    Created: 2023/02/20 17:21:11 by zmoussam          #+#    #+#              #
+#    Updated: 2023/02/20 17:21:45 by zmoussam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = *.cpp 
-NAME = replace
+NAME = Harl
 
 OBJ := ${SRC:.cpp=.o}
 
