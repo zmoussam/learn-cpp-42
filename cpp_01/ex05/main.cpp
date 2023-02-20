@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:01:21 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/02/20 18:06:50 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/02/20 18:29:51 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ int main()
     harl.complain("ERROR");
     harl.complain("WARNING");
     harl.complain("INFO");
-    harl.complain("IN");
+    harl.complain("");
 }
