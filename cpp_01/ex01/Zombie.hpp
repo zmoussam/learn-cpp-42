@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 20:06:30 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/02/18 23:48:39 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/02/20 00:21:27 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Zombie{
     public:
         Zombie();
         ~Zombie();
-        void announce(void);
+        void announce(void) const;
         void setName(std::string _name);
     private:
         std::string name; 

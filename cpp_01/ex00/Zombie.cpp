@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 20:06:33 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/02/18 23:44:16 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/02/20 00:21:48 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,17 @@ Zombie::Zombie()
 }
 Zombie::~Zombie()
 {
-    std::cout << "<" << this->name << ">  is destroyed " << std::endl;
-    // delete this;
+    std::cout  << this->name << ": is destroyed " << std::endl;
 }
 
-void Zombie::announce(void)
+void Zombie::announce(void) const
 {
-    std::cout << "<" << this->name << ">: BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void Zombie::setName(std::string name)
 {
-    this->name = name;   
+        this->name = name;   
 }
 Zombie* newZombie(std::string name)
 {
