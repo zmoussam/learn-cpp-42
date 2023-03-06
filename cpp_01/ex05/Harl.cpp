@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:29:36 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/02/20 18:31:09 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/03/06 14:59:18 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,19 @@ when an unforeseen problem occurs, usually on a computer or other device" << std
 
 void Harl::complain(std::string level)
 {
-    int i = 0;
-    void (Harl::*harlFunc[4])(void) = {&Harl::debug, &Harl::error, &Harl::info, &Harl::warning};
-    std::string msg[4] = {"DEBUG", "ERROR", "INFO", "WARNING"};
+    size_t i = 0;
+    void (Harl::*harlFunc[4])(void) = {
+        &Harl::debug, 
+        &Harl::error, 
+        &Harl::info, 
+        &Harl::warning
+    };
+    std::string msg[4] = {
+        "DEBUG", 
+        "ERROR", 
+        "INFO", 
+        "WARNING"
+    };
     while (i < 4)
     {
         if(msg[i] == level)

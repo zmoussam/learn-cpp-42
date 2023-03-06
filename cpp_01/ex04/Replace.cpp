@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:30:31 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/02/20 17:12:23 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/03/06 14:48:54 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void Replace::readAndRplace(std::string oldStr, std::string newStr)
         {
             line.erase(index, oldStr.length());
             line.insert(index, newStr);
-            index = line.find(oldStr.c_str(), index, oldStr.length());
+            index = line.find(oldStr.c_str(), index + newStr.length(), oldStr.length());
         }
         this->outputFile << line << std::endl;
     }

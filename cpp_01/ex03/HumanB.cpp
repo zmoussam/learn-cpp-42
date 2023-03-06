@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 00:11:52 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/02/20 01:22:13 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/03/06 14:33:09 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,8 @@ void HumanB::setWeapon(Weapon weapon)
 }
 void HumanB::attack() const
 {
-    std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
+    if (this->weapon)
+        std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
+    else 
+        std::cout << "weapon not found !" << std::endl;
 }

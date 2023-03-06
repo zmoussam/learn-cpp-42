@@ -5,34 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 00:38:05 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/03/06 16:10:57 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/03/06 14:59:43 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/03/06 15:16:27 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<iostream>
-#include"HumanA.hpp"
-#include"HumanB.hpp"
-#include "Weapon.hpp"
+#include "Harl.hpp"
 
-int main()
+int main(int argc, char **argv)
 {
+    Harl harl;
+    if (argc == 2)
     {
-        Weapon club;
-        HumanA bob("Bob", club);
-        bob.attack();
-        club.setType("some other type of club");
-        bob.attack();
+        harl.complain(std::string(argv[1]));
+    //     harl.complain(std::string(argv[1]));
+    //     harl.complain(std::string(argv[1]));
+    //     harl.complain(std::string(argv[1]));
     }
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanB jim("Jim");
-        jim.setWeapon(club);
-        jim.attack();
-        jim.getWeapon();
-        club.setType("some other type of club");
-        jim.attack(); 
-    }
-    
-    return 0;
+    else
+        std::cout << "no argument !!" << std::endl;
 }

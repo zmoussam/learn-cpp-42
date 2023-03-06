@@ -5,21 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/19 23:53:10 by zmoussam          #+#    #+#              #
-#    Updated: 2023/03/06 14:25:19 by zmoussam         ###   ########.fr        #
+#    Created: 2023/03/06 15:00:23 by zmoussam          #+#    #+#              #
+#    Updated: 2023/03/06 16:14:17 by zmoussam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp
-NAME = is_brain
+SRC = *.cpp 
+NAME = HarlFilter
 
 OBJ := ${SRC:.cpp=.o}
 
 all: ${NAME}
 
-%.o:%.cpp
+%.o:%.cpp *.hpp
 	$(CC) -c $(FLAGS) ${SRC}
 	
 ${NAME}: ${OBJ}
