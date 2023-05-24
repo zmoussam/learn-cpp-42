@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 21:33:37 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/02/01 16:58:21 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/24 13:49:05 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class phoneBook
         void addContact(void);
         
     private:
-        contact contacts[8];   
+        contact contacts[8];
 };
 
 #endif

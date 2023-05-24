@@ -6,26 +6,26 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 12:28:08 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/24 12:28:09 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/24 17:56:21 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FIXED_H
-#define __FIXED_H
+#ifndef FIXED__
+#define FIXED__
 
-#include <iostream>
-
-class Fixed{
-    private:
-        int FixedPoint;
-        static const int FractionalBits;
-    public:
-        Fixed(); //Default constructor
-        Fixed(const Fixed &copy); // copy DEfault constructor
-        ~Fixed(); // Destructor
-        Fixed &operator =(const Fixed &src); //Assignment operator constructor
-        int getRawBits( void ) const;
-        void setRawBits(int const raw);
-};
-
+    class Fixed
+    {
+        private:
+            int RawBits;
+            static const int FractBits;
+        
+        public:
+            Fixed();
+            Fixed(Fixed &copy);
+            ~Fixed();
+            Fixed &operator=(const Fixed &a);
+            int getRawBits(void) const;
+            void setRawBits(int const raw);
+    };
+    
 #endif
