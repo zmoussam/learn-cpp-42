@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/24 12:28:19 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/05/24 12:28:20 by zmoussam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef TEST_H
 #define TEST_H
 
@@ -8,18 +20,23 @@ class test
     private:
         int n;
     public:
-        test(/* args */);
+        test(int n);
+        test();
         ~test();
         test operator+(test t);
         void setN(int n);
         int getN();
 };
 
-test::test(/* args */)
+test::test(int n)
 {
+    this->n = n;
 }
 
 test::~test()
+{
+}
+test::test()
 {
 }
 
@@ -35,8 +52,7 @@ int test::getN()
 
 test test::operator+(test t)
 {
-    this->n = t.getN() + this->n;
-    return *this;
+    return test(this->n + t.getN());
 }
 
 #endif
