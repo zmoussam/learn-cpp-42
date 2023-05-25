@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 12:28:11 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/24 12:28:12 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/24 19:20:37 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include "Fixed.hpp"
+
 int main( void ) {
     
     Fixed a;

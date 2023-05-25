@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/24 12:28:14 by zmoussam          #+#    #+#              #
-#    Updated: 2023/05/24 19:21:43 by zmoussam         ###   ########.fr        #
+#    Created: 2023/05/25 17:50:56 by zmoussam          #+#    #+#              #
+#    Updated: 2023/05/25 17:50:57 by zmoussam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = Fixed.cpp main.cpp 
+SRC = *.cpp 
 NAME = Fixed
 
 OBJ := ${SRC:.cpp=.o}

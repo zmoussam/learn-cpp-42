@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 12:28:16 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/24 17:33:23 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:22:30 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,13 @@ void printMemoryBits(const void* ptr, size_t size) {
 }
 
 int main() {
-    double number = 42;
+    float number = 10;
     // number = number << 16;
     printMemoryBits(&number, sizeof(number));
     
     return 0;
 }
+
 // int main()
 // {
 //     test t;
