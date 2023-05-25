@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 17:50:39 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/25 18:10:28 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/25 21:22:47 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,35 @@
         
         public:
             Fixed();
-            Fixed(Fixed const &copy);
-            Fixed(const int i);
-            Fixed(const float f);
+            Fixed( const Fixed &copy );
+            Fixed( const int integer );
+            Fixed( const float f );
             ~Fixed();
-            Fixed &operator=(const Fixed &a);
-            int getRawBits(void) const;
-            void setRawBits(int const raw);
-            float toFloat(void) const;
-            int toInt(void) const;
+            Fixed &operator=( const Fixed &a );
+            int getRawBits( void ) const;
+            void setRawBits( int const raw );
+            float toFloat( void ) const;
+            int toInt( void ) const;
+            bool operator<( const Fixed &v ) const;
+            bool operator>( const Fixed &v ) const;
+            bool operator>=( const Fixed &v ) const;
+            bool operator<=( const Fixed &v ) const;
+            bool operator==( const Fixed &v ) const;
+            bool operator!=( const Fixed &v ) const;
+            Fixed operator+( const Fixed &v ) const;
+            Fixed operator-( const Fixed &v ) const;
+            Fixed operator*( const Fixed &v ) const;
+            Fixed operator/( const Fixed &v ) const;
+            Fixed &operator++();
+            Fixed operator++( int );
+            Fixed &operator--();
+            Fixed operator--( int );
+            static const Fixed &min( const Fixed &v1, const Fixed &v2 );
+            static Fixed &min( Fixed &v1, Fixed &v2 );
+            static const Fixed &max( const Fixed &v1, const Fixed &v2 );
+            static Fixed &max( Fixed &v1, Fixed &v2 );
             
     };
 
-std::ostream & operator<<(std::ostream & o, Fixed const &f);
+std::ostream & operator<<( std::ostream & o, Fixed const &f );
 #endif
