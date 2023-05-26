@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/25 17:50:24 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/26 12:03:25 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/05/26 12:21:40 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/05/26 15:20:47 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Fixed::Fixed(const int integer)
 {
     this->RawBits = integer << Fixed::FractBits;
 }
+
 Fixed::Fixed(const float floatNumber)
 {
     this->RawBits = roundf(floatNumber * (1 << Fixed::FractBits));
