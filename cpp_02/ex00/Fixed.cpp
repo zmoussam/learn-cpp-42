@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 12:28:01 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/25 16:10:52 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:16:49 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ Fixed::Fixed(Fixed const &copy)
 
 Fixed::~Fixed()
 {
-    
+    std::cout << "Destructor called" << std::endl;
 }
+
 void Fixed::setRawBits(int const raw)
 {
     this->RawBits = raw;

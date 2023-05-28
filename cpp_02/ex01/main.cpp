@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 12:28:29 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/25 19:03:01 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:32:32 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main( void ) {
     
     Fixed a;
-    Fixed const b( -10 ); 
+    Fixed const b( 10 ); 
     Fixed const c( 42.42f );
     Fixed const d( b );
     
@@ -27,9 +27,9 @@ int main( void ) {
     std::cout << "c is " << c << std::endl;
     std::cout << "d is " << d << std::endl;
 
-    std::cout << a.toInt() << " as integer" << std::endl;
-    std::cout << b.toInt() << " as integer" << std::endl;
-    std::cout << c.toInt() << " as integer" << std::endl;
-    std::cout << d.toInt() << " as integer" << std::endl;
+    std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+    std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+    std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+    std::cout << "d is " << d.toInt() << " as integer" << std::endl;
     
 }
