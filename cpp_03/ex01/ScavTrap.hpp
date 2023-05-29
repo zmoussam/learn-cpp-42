@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 16:48:22 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/29 19:21:33 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/05/29 17:39:46 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/05/29 19:25:45 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP__
+#define SCAVTRAP__
 #include "ClapTrap.hpp"
 
-int main()
-{
-    ClapTrap c("zack");
-
-    std::cout << c.getName() << std::endl;
-    c.takeDamage(10);
+    class ScavTrap : public ClapTrap
+    {
+        public:
+            ScavTrap();
+            ScavTrap(std::string &name);
+            ScavTrap(const ScavTrap &copy);
+            ~ScavTrap();
+            ScavTrap & operator=(const ScavTrap &copy); 
+    };
     
-    c.attack("eco");
-    c.attack("eco");
-    c.attack("eco");
-    c.attack("eco");
-    c.attack("eco");
-    c.beRepaired(20);
-    c.attack("eco");
-    c.attack("eco");
-}
+#endif

@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 16:48:22 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/29 19:21:33 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/05/29 17:39:19 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/05/29 19:26:30 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main()
-{
-    ClapTrap c("zack");
-
-    std::cout << c.getName() << std::endl;
-    c.takeDamage(10);
-    
-    c.attack("eco");
-    c.attack("eco");
-    c.attack("eco");
-    c.attack("eco");
-    c.attack("eco");
-    c.beRepaired(20);
-    c.attack("eco");
-    c.attack("eco");
+ScavTrap::ScavTrap(){
+    this->Health = 100;
+    this->energyPoint = 50;
+    this->damage = 20;
 }
+
+ScavTrap::ScavTrap(std::string &name){
+    this->name = name;    
+}
+ScavTrap(const ScavTrap &copy);
+~ScavTrap();
+ScavTrap & operator=(const ScavTrap &copy); 
