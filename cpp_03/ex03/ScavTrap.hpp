@@ -6,20 +6,9 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 17:39:46 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/30 15:55:04 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/29 19:58:00 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-//-------------------------------------------------------------
-// BASE CLASS | DERIVED CLASS   DERIVED CLASS   DERIVED CLASS |
-//-------------------------------------------------------------
-//            | Public MODE     Private MODE    Proteced MODE |  <<<<<<-------- Inheritance modes
-//-------------------------------------------------------------
-// Private    | Not Inherited   Not Inherited   Not Inherited |
-// Protected  | Protected       Private         Protected     |
-// Public     | Public          Private         Protected     |
-//-------------------------------------------------------------
 
 #ifndef SCAVTRAP__
 #define SCAVTRAP__
@@ -33,7 +22,7 @@
             ScavTrap(const ScavTrap &copy);
             ~ScavTrap();
             void guardGate();
-            ScavTrap & operator=(const ScavTrap &copy); 
+            ScavTrap & operator=(const ScavTrap &copy);
             void attack( const std::string& target );
     };
     

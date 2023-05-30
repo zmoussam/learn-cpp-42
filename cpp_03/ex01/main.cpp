@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 16:48:22 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/29 19:58:49 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:32:31 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int main()
     ScavTrap c("zack");
 
     std::cout << c.getName() << std::endl;
-    c.takeDamage(10);
     
     c.attack("eco");
     c.attack("eco");
