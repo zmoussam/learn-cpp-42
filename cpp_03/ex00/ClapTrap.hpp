@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 19:42:42 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/29 15:36:38 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/30 20:45:52 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
             ClapTrap( const ClapTrap &copy );
             ClapTrap &operator=( const ClapTrap &copy);
             ~ClapTrap();
-            ClapTrap( std::string name );
+            ClapTrap( const std::string &name );
             int getHealth() const;
             int getEnergyPoint() const;
             int getDamage() const;

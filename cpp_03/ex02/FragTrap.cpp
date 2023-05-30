@@ -6,13 +6,13 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:34:24 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/30 17:11:52 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/30 21:23:32 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(){
+FragTrap::FragTrap() {
     std::cout << "FragTrap :: Default constructor called" << std::endl;
     this->Health = 100;
     this->energyPoint = 100;
@@ -24,9 +24,8 @@ FragTrap::FragTrap(const FragTrap &copy){
     *this = copy;
 }
 
-FragTrap::FragTrap(const std::string &name){
-    std::cout << "new FragTrap created with the name " << name << std::endl;
-    this->name = name;    
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name){
+    std::cout << "new FragTrap created with the name " << name << std::endl;  
     this->Health = 100;
     this->energyPoint = 50;
     this->damage = 20;
@@ -45,7 +44,7 @@ FragTrap & FragTrap::operator=(const FragTrap &copy){
 }
 
 void FragTrap::highFivesGuys(){
-    std::cout << "high fives!!" << std::endl;
+    std::cout << "FragTrap gives high fives!!" << std::endl;
 }
 void FragTrap::attack( const std::string& target ){
     if (this->energyPoint <= 0  || this->Health <= 0)

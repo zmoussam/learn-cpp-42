@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:34:24 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/30 17:11:52 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/30 21:24:28 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ FragTrap::FragTrap(const FragTrap &copy){
     *this = copy;
 }
 
-FragTrap::FragTrap(const std::string &name){
+FragTrap::FragTrap(const std::string &name): ClapTrap(name){
     std::cout << "new FragTrap created with the name " << name << std::endl;
-    this->name = name;    
     this->Health = 100;
     this->energyPoint = 50;
     this->damage = 20;

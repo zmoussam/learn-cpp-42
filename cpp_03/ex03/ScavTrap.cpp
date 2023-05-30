@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 17:39:19 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/30 17:11:08 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/30 21:24:47 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ ScavTrap::ScavTrap(){
     this->damage = 20;
 }
 
-ScavTrap::ScavTrap(const std::string &name){
-    std::cout << "new ScavTrap created with the name " << name << std::endl;
-    this->name = name;    
+ScavTrap::ScavTrap(const std::string &name): ClapTrap(name){
+    std::cout << "new ScavTrap created with the name " << name << std::endl;    
     this->Health = 100;
     this->energyPoint = 50;
     this->damage = 20;

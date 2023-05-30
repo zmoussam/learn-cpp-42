@@ -1,30 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 16:48:22 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/30 21:06:00 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/05/30 18:08:52 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/05/30 18:10:00 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-
-int main()
-{
-    ScavTrap c("zack");
-
-    std::cout << c.getName() << std::endl;
-    
-    c.attack("eco");
-    c.attack("eco");
-    c.attack("eco");
-    c.attack("eco");
-    c.attack("eco");
-    c.beRepaired(20);
-    c.attack("eco");
-    c.attack("eco");
-}
