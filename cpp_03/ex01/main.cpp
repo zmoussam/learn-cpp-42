@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 16:48:22 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/31 16:36:13 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:09:38 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main()
 {
     ScavTrap c("zack");
-    ClapTrap *a = new ScavTrap("harry");
+    ScavTrap *a = new ScavTrap("harry");
 
     std::cout << c.getName() << std::endl;
     std::cout << a->getEnergyPoint() << std::endl;

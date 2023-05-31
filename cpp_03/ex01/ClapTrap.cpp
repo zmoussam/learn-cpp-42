@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:05:46 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/31 15:08:48 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:08:23 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void ClapTrap::beRepaired( unsigned int amount ){
     if (this->EnergyPoint <= 0  || this->Health <= 0)
         std::cout << "ClapTrap " << this->name << " can't do anything " << std::endl;
     else{
-        std::cout << "ClapTrap " << this->name << " be repaired" << std::endl;
+        std::cout << "ClapTrap " << this->name << " be repaired with "<< amount << " of hit points" << std::endl;
         this->Health += amount;
         this->EnergyPoint--;
     }
