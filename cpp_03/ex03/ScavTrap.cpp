@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 17:39:19 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/30 21:24:47 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:02:53 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 ScavTrap::ScavTrap(){
     std::cout << "ScavTrap :: Default constructor called" << std::endl;
+    this->name = "";
     this->Health = 100;
     this->energyPoint = 50;
     this->damage = 20;

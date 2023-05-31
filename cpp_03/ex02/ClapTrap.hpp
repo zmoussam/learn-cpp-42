@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 19:42:42 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/29 19:57:34 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:32:04 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
         protected:
             std::string name;
             int Health;
-            int energyPoint;
-            int damage;
+            int EnergyPoint;
+            int Damage;
                  
         public:
             ClapTrap();

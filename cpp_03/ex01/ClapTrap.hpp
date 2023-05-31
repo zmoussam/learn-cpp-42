@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 19:42:42 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/29 19:57:34 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:31:55 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@
         protected:
             std::string name;
             int Health;
-            int energyPoint;
-            int damage;
+            int EnergyPoint;
+            int Damage;
                  
         public:
             ClapTrap();
             ClapTrap( const ClapTrap &copy );
+            ClapTrap( const std::string &name );
             ClapTrap &operator=( const ClapTrap &copy);
             ~ClapTrap();
-            ClapTrap( const std::string &name );
             int getHealth() const;
             int getEnergyPoint() const;
             int getDamage() const;

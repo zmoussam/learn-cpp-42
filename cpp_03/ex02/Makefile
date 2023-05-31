@@ -6,14 +6,14 @@
 #    By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/28 19:41:49 by zmoussam          #+#    #+#              #
-#    Updated: 2023/05/28 19:42:15 by zmoussam         ###   ########.fr        #
+#    Updated: 2023/05/31 16:06:32 by zmoussam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = *.cpp 
-NAME = ClapTrap
+NAME = FragTrap
 
 OBJ := ${SRC:.cpp=.o}
 

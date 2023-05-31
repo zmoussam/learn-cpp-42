@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 17:39:46 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/29 19:58:00 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:40:03 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
             ScavTrap(const ScavTrap &copy);
             ~ScavTrap();
             void guardGate();
-            ScavTrap & operator=(const ScavTrap &copy);
+            ScavTrap & operator=(const ScavTrap &copy); 
             void attack( const std::string& target );
     };
     

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 18:09:54 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/30 20:31:14 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:43:51 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@
             ~DiamondTrap();
             DiamondTrap &operator=(const DiamondTrap &copy);
             void attack(const std::string &target);
-            void whoAmI();
-            
+            void whoAmI();  
     };
     
 #endif

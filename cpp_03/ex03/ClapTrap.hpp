@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 19:42:42 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/29 19:57:34 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:50:26 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
     class ClapTrap
     {
         protected:
-            std::string name;
+           std::string name;
             int Health;
             int energyPoint;
             int damage;

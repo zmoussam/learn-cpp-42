@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:34:30 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/30 17:09:39 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:30:39 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,5 @@
             FragTrap & operator=(const FragTrap &copy);
             void attack( const std::string& target );
             void highFivesGuys();
-            
-            
     };
 #endif 

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:34:24 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/05/30 21:24:28 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/05/31 14:02:34 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 FragTrap::FragTrap(){
     std::cout << "FragTrap :: Default constructor called" << std::endl;
+    this->name = "";
     this->Health = 100;
     this->energyPoint = 100;
     this->damage = 30;
