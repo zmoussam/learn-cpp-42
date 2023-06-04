@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 13:24:49 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 13:31:47 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/06/01 18:29:09 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/06/04 14:04:03 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "Dog.hpp"
 
-WrongCat::WrongCat(){
-    std::cout << "new WrongCat created" << std::endl;
-    this->type = "WrongCat";
+Dog::Dog(){
+    std::cout << "new Dog created" << std::endl;
+    this->type = "Dog";
+    this->idea = new Brain();
 }
 
-WrongCat::WrongCat(const WrongCat &copy){
-    std::cout << "copy constructor for WrongCat called" << std::endl;
+Dog::Dog(const Dog &copy){
+    std::cout << "copy constructor for dog called" << std::endl;
     *this = copy;
 }
 
-WrongCat::~WrongCat(){
-    std::cout << "destructor for WrongCat called" << std::endl;
-    
+Dog::~Dog(){
+    std::cout << "destructor for Dog called" << std::endl;
+    delete this->idea;
 }
 
-WrongCat &WrongCat::operator=(const WrongCat &copy){
+Dog &Dog::operator=(const Dog &copy){
    this->type = copy.getType();
    return *this;
 }
 
-void WrongCat::makeSound() const{
-    std::cout << "miaaaaaaw " << std::endl;
+void Dog::makeSound() const{
+    std::cout << "haaaoow haoow" << std::endl;
 }
+
+

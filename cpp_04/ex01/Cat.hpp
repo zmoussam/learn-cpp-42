@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 18:44:26 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 13:23:31 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/06/01 18:29:05 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/06/04 14:08:14 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG__
-#define DOG__
+#ifndef CAT__
+#define CAT__
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 #include <iostream>
- 
-    class Dog : public Animal 
+
+    class Cat : public Animal 
     {
+        private:
+            Brain *idea;
         public:
-            Dog();
-            Dog(const Dog &copy);
-            ~Dog();
-            Dog &operator=(const Dog &copy);
-            void makeSound() const;         
+            Cat();
+            Cat(const Cat  &copy);
+            ~Cat();
+            Cat &operator=(const Cat &copy); 
+            void makeSound() const;
     };
-#endif
+#endif 

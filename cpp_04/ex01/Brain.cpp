@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 18:29:00 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 13:23:17 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/06/04 13:45:41 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/06/04 14:45:17 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Brain.hpp"
 
-Cat::Cat(){
-    std::cout << "new cat created" << std::endl;
-    this->type = "Cat";
+Brain::Brain(){
+    std::cout << "new Brain created" << std::endl;
 }
 
-Cat::Cat(const Cat &copy){
-    std::cout << "copy constructor for Cat called" << std::endl;
+Brain::Brain(const Brain &copy){
     *this = copy;
 }
 
-Cat::~Cat(){
-    std::cout << "destructor for Cat called" << std::endl;
+Brain::~Brain(){
+    std::cout << "destructor for Brain called" << std::endl;
 }
 
-Cat &Cat::operator=(const Cat &copy){
-    this->type = copy.getType();
+Brain &Brain::operator=(const Brain &copy){
+    if (this == &copy)
+        return *this;
+    for (int i = 0 ; i < 100 ; i++)
+        this->ideas[i] = copy.ideas[i];
     return *this;
 }
 
-void Cat::makeSound() const{
-    std::cout << "mmiiiaaaaaaaaaw" << std::endl;
-}
+
+

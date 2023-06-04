@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 18:44:26 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 13:23:31 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/06/04 13:45:44 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/06/04 14:34:54 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG__
-#define DOG__
-
-#include "Animal.hpp"
+#ifndef BRAIN__
+#define BRAIN__
 #include <iostream>
- 
-    class Dog : public Animal 
+#include <string>
+
+    class Brain 
     {
+        private:
+            std::string ideas[100];
         public:
-            Dog();
-            Dog(const Dog &copy);
-            ~Dog();
-            Dog &operator=(const Dog &copy);
-            void makeSound() const;         
+            Brain();
+            Brain(const Brain &copy);
+            ~Brain();
+            Brain &operator=(const Brain &copy);
+            std::string * getIdeas() const;
+            
     };
-#endif
+#endif 

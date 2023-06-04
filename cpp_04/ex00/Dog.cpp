@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:29:09 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/01 19:10:24 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/04 13:23:26 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ Dog::~Dog(){
 
 Dog &Dog::operator=(const Dog &copy){
    this->type = copy.getType();
+   return *this;
 }
 
-void Dog::makeSound(){
+void Dog::makeSound() const{
     std::cout << "haaaoow haoow" << std::endl;
 }
 

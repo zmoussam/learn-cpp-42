@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:29:05 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/01 19:30:37 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/04 13:23:21 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@
             Cat(const Cat  &copy);
             ~Cat();
             Cat &operator=(const Cat &copy); 
-            void makeSound();
+            void makeSound() const;
     };
 #endif 
