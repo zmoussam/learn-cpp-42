@@ -6,11 +6,11 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:03:43 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 16:17:44 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/06 13:48:42 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
@@ -22,8 +22,8 @@ int main()
 //  delete i;
 
     int size = 10;
-    const Animal* animals[size];
-    
+    const AAnimal* animals[size];
+    // AAnimal *an = new AAnimal();
     
     for (int i = 0 ; i < size ; i++)
     {
@@ -33,9 +33,7 @@ int main()
             animals[i] = new Dog();
     }
     for (int i = 0 ; i < size ; i++)
-    {
         delete animals[i];
-    }
-
+        
     return 0;
 }

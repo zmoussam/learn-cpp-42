@@ -1,31 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 18:29:05 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/06 13:48:34 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/06/06 16:13:27 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/06/06 16:13:28 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT__
-#define CAT__
-
-#include "AAnimal.hpp"
-#include "Brain.hpp"
-#include <iostream>
-
-    class Cat : public AAnimal 
-    {
-        private:
-            Brain *idea;
-        public:
-            Cat();
-            Cat(const Cat  &copy);
-            ~Cat();
-            Cat &operator=(const Cat &copy); 
-            void makeSound() const;
-    };
-#endif 

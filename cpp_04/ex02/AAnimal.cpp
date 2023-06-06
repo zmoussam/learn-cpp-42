@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:15:58 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 13:54:15 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/06 13:48:58 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal(){
+AAnimal::AAnimal(){
     std::cout << "new animal created" << std::endl;
     this->type = "";
 }
 
-Animal::Animal(const Animal &copy){
+AAnimal::AAnimal(const AAnimal &copy){
     std::cout << "copy constructor for animal called" << std::endl;
     *this = copy;
 }
 
-Animal & Animal::operator=(const Animal &copy){
+AAnimal & AAnimal::operator=(const AAnimal &copy){
     this->type = copy.getType();
     return *this;
 }
 
-Animal::~Animal(){
+AAnimal::~AAnimal(){
     std::cout << "destructor for animal called" << std::endl; 
 }
 
-std::string Animal::getType() const{
+std::string AAnimal::getType() const{
     return this->type;
 }
 
-void Animal::makeSound() const{
+void AAnimal::makeSound() const{
     return ;  
 }
