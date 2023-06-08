@@ -6,7 +6,32 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:18:07 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/06 19:18:08 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/08 18:14:35 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "MateriaSource.hpp"
+
+MateriaSource::MateriaSource(){
+
+}
+
+MateriaSource::MateriaSource(const MateriaSource &copy){
+    
+}
+
+MateriaSource::~MateriaSource(){
+
+}
+
+MateriaSource & MateriaSource::operator=(const MateriaSource){
+    
+}
+
+void MateriaSource::learnMateria(AMateria*){
+    
+}
+
+AMateria* MateriaSource::createMateria(std::string const & type){
+    
+}
