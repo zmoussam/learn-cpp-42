@@ -6,20 +6,20 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:10:12 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/08 17:07:52 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/09 15:46:42 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER__
 #define CHARACTER__
 #include "ICharacter.hpp"
-#include "AMateria.hpp"
 #include <iostream>
 #include <string>
 
     class Character : public ICharacter{
         private:
             std::string name;
+            AMateria *inventory[4];
         public:
             Character();
             Character(const Character &copy);
