@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 18:53:50 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/08 18:37:39 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/10 15:50:47 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define CURE__
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
-
+// class ICharacter;
     class Cure : public AMateria{
 
         public:

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:44:26 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 14:03:19 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/10 18:07:49 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@
     class Dog : public Animal 
     {
         private:
-            Brain *idea;
+            Brain *brain;
         public:
             Dog();
             Dog(const Dog &copy);
             ~Dog();
             Dog &operator=(const Dog &copy);
+            Brain *getBrain() const;
+            void setBrain(Brain *brain);
             void makeSound() const;         
     };
 #endif

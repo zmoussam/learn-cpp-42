@@ -6,14 +6,16 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:18:07 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/09 21:06:52 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/10 17:08:17 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 MateriaSource::MateriaSource(){
-
+    
 }
 
 MateriaSource::MateriaSource(const MateriaSource &copy){
@@ -21,17 +23,33 @@ MateriaSource::MateriaSource(const MateriaSource &copy){
 }
 
 MateriaSource::~MateriaSource(){
-
+    for(int i = 0 ; i < 4 ; i++){
+        if (this->Materia[i])
+            delete Materia[i];
+    }
 }
 
-MateriaSource & MateriaSource::operator=(const MateriaSource){
+MateriaSource & MateriaSource::operator=(const MateriaSource &copy){
+    for(int i = 0; i < 4 ; i++){
+        this->Materia[i] = copy.Materia[i]->clone();
+    }
     return *this;
 }
 
-void MateriaSource::learnMateria(AMateria*){
-    
+void MateriaSource::learnMateria(AMateria *m){
+    for(int i = 0 ; i < 4 ; i++){
+        if (!this->Materia[i])
+        {
+            this->Materia[i] = m->clone();
+            break;
+        }
+    }
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type){
-    
+    for(int i = 0 ; i < 4 ; i++){
+        if (this->Materia[i] && type == this->Materia[i]->getType())
+            return (this->Materia[i]->clone());
+    }
+    return 0;
 }

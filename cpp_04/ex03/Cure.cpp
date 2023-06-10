@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 18:53:52 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/09 12:16:02 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/10 17:00:19 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ Cure::Cure(const Cure &copy){
     *this = copy;
 }
 
-Cure::~Cure(){
-
-}
+Cure::~Cure() {}
 
 Cure & Cure::operator=(const Cure &copy){
     this->type = copy.getType();

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 16:13:27 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/09 16:44:29 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/10 14:30:01 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,7 @@ AMateria &AMateria::operator=(const AMateria &copy){
 
 std::string const & AMateria::getType() const{
     return this->type;   
+}
+void AMateria::use(ICharacter & target){
+    (void)target;
 }

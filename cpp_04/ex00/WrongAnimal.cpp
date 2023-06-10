@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:24:44 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 13:53:50 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/10 17:45:16 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 WrongAnimal::WrongAnimal(){
     std::cout << "new WrongAnimal created" << std::endl;
-    this->type = "";
+    this->type = "WrongAnimal";
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy){
@@ -28,7 +28,7 @@ WrongAnimal & WrongAnimal::operator=(const WrongAnimal &copy){
 }
 
 WrongAnimal::~WrongAnimal(){
-    std::cout << "destructo for WrongAnimal called" << std::endl; 
+    std::cout << "destructor for WrongAnimal called" << std::endl; 
 }
 
 std::string WrongAnimal::getType() const{

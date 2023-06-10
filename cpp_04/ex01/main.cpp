@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:03:43 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 16:17:44 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/10 20:18:58 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,56 @@ int main()
 //  const Animal* i = new Cat();
 //  delete j;//should not create a leak
 //  delete i;
-
-    int size = 10;
-    const Animal* animals[size];
+                                                        
+    // int size = 2;                     
+    // Animal* animals[size];
+    std::string *catIdeas = new std::string[100];                        // test the deep copy and shallow copy
+    catIdeas[0] = "cat idea : (i want to eat)";
+    std::string *dogIdeas = new std::string[100];;
+    dogIdeas[0] = "dog idea : (i want to bark)";
     
-    
-    for (int i = 0 ; i < size ; i++)
-    {
-        if (i < (size / 2))
-            animals[i] = new Cat();
-        else 
-            animals[i] = new Dog();
-    }
-    for (int i = 0 ; i < size ; i++)
-    {
-        delete animals[i];
-    }
+    Brain *catBrain = new Brain();
+    Brain *dogBrain = new Brain();
 
+    catBrain->setIdeas(catIdeas);
+    dogBrain->setIdeas(dogIdeas);
+    
+    Cat *cat = new Cat();
+    cat->setBrain(catBrain);    
+    Cat *copyCat = new Cat(*cat);
+    
+    Dog *dog = new Dog();
+    dog->setBrain(dogBrain);
+    Dog *copyDog = new Dog(*dog);
+    
+
+    std::cout << cat->getBrain()->getIdeas()[0] << std::endl;
+    std::cout << copyCat->getBrain()->getIdeas()[0] << std::endl;
+    std::cout << dog->getBrain()->getIdeas()[0] << std::endl;
+    std::cout << copyDog->getBrain()->getIdeas()[0] << std::endl;
+    
+    catIdeas[0] = "no idea";
+    dogIdeas[0] = "no idea";
+    catBrain->setIdeas(catIdeas);
+    dogBrain->setIdeas(dogIdeas);
+    
+    std::cout << cat->getBrain()->getIdeas()[0] << std::endl;
+    std::cout << copyCat->getBrain()->getIdeas()[0] << std::endl;
+    std::cout << dog->getBrain()->getIdeas()[0] << std::endl;
+    std::cout << copyDog->getBrain()->getIdeas()[0] << std::endl;
+
+    
+    // for (int i = 0 ; i < size ; i++)
+    // {
+    //     if (i < (size / 2))
+    //         animals[i] = new Cat();
+    //     else 
+    //         animals[i] = new Dog();
+    // }
+    // for (int i = 0 ; i < size ; i++){
+    //     delete animals[i];
+    // }
+
+    
     return 0;
 }

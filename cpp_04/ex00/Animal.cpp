@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:15:58 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 13:53:55 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/10 17:41:12 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Animal::Animal(){
     std::cout << "new animal created" << std::endl;
-    this->type = "";
+    this->type = "Animal";
 }
 
 Animal::Animal(const Animal &copy){
