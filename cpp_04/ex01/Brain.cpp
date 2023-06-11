@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:45:41 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/10 20:20:51 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/11 14:57:20 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Brain::Brain(){
 }
 
 Brain::Brain(const Brain &copy){
+    std::cout << "new Brain created" << std::endl;
     *this = copy;
 }
 

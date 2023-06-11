@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:45:41 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 14:45:17 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/10 20:20:51 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,12 @@ Brain &Brain::operator=(const Brain &copy){
     return *this;
 }
 
+const std::string *Brain::getIdeas() const{
+    return this->ideas;
+}
 
-
+void Brain::setIdeas(std::string *ideas){
+   for (int i = 0; i < 100; i++) {
+            this->ideas[i] = ideas[i];
+        }
+}

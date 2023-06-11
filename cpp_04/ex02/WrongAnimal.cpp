@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:24:44 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 13:54:23 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/10 17:47:05 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 WrongAnimal::WrongAnimal(){
     std::cout << "new WrongAnimal created" << std::endl;
-    this->type = "";
+    this->type = "WrongAnimal";
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy){

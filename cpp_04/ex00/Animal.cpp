@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:15:58 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/10 17:41:12 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/11 13:42:57 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Animal & Animal::operator=(const Animal &copy){
 }
 
 Animal::~Animal(){
-    std::cout << "destructo for animal called" << std::endl; 
+    std::cout << "destructor for animal called" << std::endl; 
 }
 
 std::string Animal::getType() const{

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:18:07 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/10 17:08:17 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/11 15:41:08 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 #include "Cure.hpp"
 
 MateriaSource::MateriaSource(){
-    
+    for(int i = 0 ; i < 4 ; i++){
+        this->Materia[i] = NULL;
+    }
 }
 
 MateriaSource::MateriaSource(const MateriaSource &copy){

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:15:58 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/06 13:48:58 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/10 21:24:45 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,4 @@ AAnimal::~AAnimal(){
 
 std::string AAnimal::getType() const{
     return this->type;
-}
-
-void AAnimal::makeSound() const{
-    return ;  
 }

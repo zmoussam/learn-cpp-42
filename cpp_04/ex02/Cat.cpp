@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:29:00 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 14:04:17 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/11 14:47:22 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cat::Cat(){
     std::cout << "new cat created" << std::endl;
     this->type = "Cat";
-    this->idea = new Brain();
+    this->brain = new Brain();
 }
 
 Cat::Cat(const Cat &copy){
@@ -25,14 +25,24 @@ Cat::Cat(const Cat &copy){
 
 Cat::~Cat(){
     std::cout << "destructor for Cat called" << std::endl;
-    delete this->idea;
+    delete this->brain;
 }
 
 Cat &Cat::operator=(const Cat &copy){
     this->type = copy.getType();
+     this->brain = new Brain(*copy.brain);
+    // this->brain = copy.getBrain(); // for testing the shallow copy in main
     return *this;
 }
 
 void Cat::makeSound() const{
     std::cout << "mmiiiaaaaaaaaaw" << std::endl;
+}
+
+Brain *Cat::getBrain() const{
+    return this->brain;
+}
+
+void Cat::setBrain(Brain *brain) {
+    this->brain = brain;
 }

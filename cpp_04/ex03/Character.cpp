@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 19:10:09 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/10 16:24:25 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/11 14:48:31 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,8 @@ Character::~Character(){
 Character &Character::operator=(const Character &copy){
     this->name = copy.getName();
     for(int i = 0 ; i < 4 ; i++){
-        if (copy.inventory[i]){
-            delete this->inventory[i];
             this->inventory[i] = copy.inventory[i]->clone(); 
         }
-    }
     return *this;
 }
 

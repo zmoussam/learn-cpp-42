@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:29:09 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/04 13:23:26 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/11 14:55:27 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ Dog::Dog(const Dog &copy){
 
 Dog::~Dog(){
     std::cout << "destructor for Dog called" << std::endl;
-    
 }
 
 Dog &Dog::operator=(const Dog &copy){

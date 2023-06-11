@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 18:53:47 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/10 15:50:55 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/11 14:01:45 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define ICE__
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
-// class ICharacter;
     class Ice : public AMateria{
 
         public:
