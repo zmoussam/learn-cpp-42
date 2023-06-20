@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:55:56 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/20 21:26:47 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/20 23:42:47 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,22 @@
     {
         private:
             std::string name;
-            short grade;
+            int grade;
         public:
+            Bureaucrat(const Bureaucrat &copy);
             Bureaucrat();
             ~Bureaucrat();
+            Bureaucrat &operator=(const Bureaucrat &copy);
+            class GradeTooHighException
+            {
+
+            };
+            class GradeTooLowException
+            {
+                
+            };
+
     };
+std::ostream & operator<<(std::ostream &o, Bureaucrat const &f);
 
 #endif
