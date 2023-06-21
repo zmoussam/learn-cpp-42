@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:48:58 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/21 19:00:19 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/21 20:45:15 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ const char * Bureaucrat::GradeTooLowException::what() const  throw()
     return "Grade is too low !!";
 }
 
-std::ostream & operator<<(std::ostream &o, Bureaucrat const &f)
+std::ostream & operator<<(std::ostream &o, Bureaucrat const &b)
 {
-    o << f.getName() << ", bureaucrat grade " << f.getGrade();
+    o << b.getName() << ", bureaucrat grade " << b.getGrade();
     return o;
 }

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:55:56 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/21 17:41:39 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/21 20:45:19 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@
             };
     };
     
-std::ostream & operator<<(std::ostream &o, Bureaucrat const &f);
+std::ostream & operator<<(std::ostream &o, Bureaucrat const &b);
 
 #endif

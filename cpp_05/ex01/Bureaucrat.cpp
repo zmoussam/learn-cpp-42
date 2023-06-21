@@ -6,11 +6,12 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:48:58 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/21 19:00:31 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/21 20:51:28 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat()
 {
@@ -75,16 +76,28 @@ void Bureaucrat::decrementGrade()
 
 const char * Bureaucrat::GradeTooHighException::what() const throw()
 { 
-    return "Grade is too high !!";
+    return "Bureaucrat : grade is too high !!";
 }
 
 const char * Bureaucrat::GradeTooLowException::what() const  throw()
 {
-    return "Grade is too low !!";
+    return "Bureaucrat : grade is too low !!";
 }
 
-std::ostream & operator<<(std::ostream &o, Bureaucrat const &f)
+void Bureaucrat::signForm(Form F)
 {
-    o << f.getName() << ", bureaucrat grade " << f.getGrade();
+    try {
+        F.beSigned(*this);
+        std::cout << this->name << " signed " << F.getName() << std::endl;
+    }
+    catch(std::exception &e)
+    {
+        std::cout << this->name << " couldn't sign " << F.getName() << " because " << e.what() << std::endl;
+    }
+}
+
+std::ostream & operator<<(std::ostream &o, Bureaucrat const &b)
+{
+    o << b.getName() << ", bureaucrat grade " << b.getGrade();
     return o;
 }

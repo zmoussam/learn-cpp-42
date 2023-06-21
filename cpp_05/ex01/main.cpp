@@ -6,22 +6,27 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:49:01 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/21 17:58:15 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/21 20:54:42 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
     try{
-        Bureaucrat b("harry", 150);
+        Bureaucrat b("harry", 1);
         Bureaucrat B(b);
-        b.incrementGrade();
-        b.incrementGrade();
-        b.decrementGrade();
-        std::cout << b << std::endl;
-        std::cout << B << std::endl;
+        Form f("certificat", 10, 12, false);
+        Form g(f);
+        // b.incrementGrade();
+        // b.incrementGrade();
+        // b.decrementGrade();
+        // std::cout << b << std::endl;
+        // std::cout << B << std::endl;
+        b.signForm(f);
+        b.signForm(g);
     }
     catch (std::exception &high)
     {
