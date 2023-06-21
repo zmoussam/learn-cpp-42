@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:49:01 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/21 20:54:42 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/21 20:57:49 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main()
 {
     try{
-        Bureaucrat b("harry", 1);
+        Bureaucrat b("harry", 100);
         Bureaucrat B(b);
         Form f("certificat", 10, 12, false);
         Form g(f);

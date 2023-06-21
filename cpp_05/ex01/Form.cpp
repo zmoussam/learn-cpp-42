@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 18:11:23 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/21 20:49:00 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/21 20:59:11 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ Form & Form::operator=(const Form &copy)
 
 const char * Form::GradeTooLowException::what() const throw()
 {
-    return "Form : Grade is too low !!";
+    return "Grade is too low !!";
 }
 
 const char * Form::GradTooHighException::what() const throw()
 {
-    return "Form : Grade is too high !!";
+    return "Grade is too high !!";
 }
 
 std::string Form::getName() const
