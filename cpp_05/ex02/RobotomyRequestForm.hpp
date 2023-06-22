@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 21:31:24 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/21 22:33:28 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/22 19:01:46 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@
         public:
             RobotomyRequestForm();
             ~RobotomyRequestForm();
+            RobotomyRequestForm(const std::string target);
             RobotomyRequestForm(const RobotomyRequestForm &copy);
             RobotomyRequestForm &operator=(const RobotomyRequestForm &copy);
-            RobotomyRequestForm(const std::string target);
+            void execute(Bureaucrat const & executor) const;
     };  
 
 #endif

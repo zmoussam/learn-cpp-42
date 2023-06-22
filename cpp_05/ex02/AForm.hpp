@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 21:31:09 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/21 21:48:30 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/22 21:21:14 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@
 
         public:
             AForm();
-            ~AForm();
+            virtual ~AForm();
             AForm(const AForm &copy);
             AForm &operator=(const AForm &copy);
             AForm(const std::string & name, int signGrade, int executGrade, bool signature);
-            virtual void beSigned(Bureaucrat B) = 0;
-            void execute(Bureaucrat const & executor) const;
+            void beSigned(Bureaucrat const & B);
+            virtual void execute(Bureaucrat const & executor) const = 0;
             std::string getName() const;
             class GradeTooLowException : public std::exception
             {
@@ -41,6 +41,11 @@
             };
 
             class GradTooHighException : public std::exception
+            {
+                public:
+                    const char * what() const throw();
+            };
+            class NotSignedExcepion : public std::exception
             {
                 public:
                     const char * what() const throw();

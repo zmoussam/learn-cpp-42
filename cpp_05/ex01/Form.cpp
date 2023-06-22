@@ -6,13 +6,13 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 18:11:23 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/21 20:59:11 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/22 18:24:45 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : name("X") , signature(false), signGrade(150) , executGrade(150)
+Form::Form() : name("XF") , signature(false), signGrade(150) , executGrade(150)
 {
 
 }
