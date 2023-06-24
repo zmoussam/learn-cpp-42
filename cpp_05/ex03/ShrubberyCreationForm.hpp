@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 21:31:29 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/22 20:46:38 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 02:07:31 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
             ShrubberyCreationForm(const ShrubberyCreationForm &copy);
             ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);
             void execute(Bureaucrat const & executor) const;
+            ShrubberyCreationForm * clone(std::string target);
     };
 
 #endif

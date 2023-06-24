@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 21:31:26 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/22 22:25:12 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 02:11:06 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         }
         
     }
+}
+ShrubberyCreationForm * ShrubberyCreationForm::clone(std::string target)
+{
+    return new ShrubberyCreationForm(target);
 }

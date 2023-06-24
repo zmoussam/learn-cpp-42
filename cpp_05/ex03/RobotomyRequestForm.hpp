@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 21:31:24 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/22 19:01:46 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 02:07:47 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
             RobotomyRequestForm(const RobotomyRequestForm &copy);
             RobotomyRequestForm &operator=(const RobotomyRequestForm &copy);
             void execute(Bureaucrat const & executor) const;
+            RobotomyRequestForm * clone(std::string target);
     };  
 
 #endif

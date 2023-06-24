@@ -6,19 +6,19 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 18:11:23 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/22 18:24:45 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 02:02:01 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : name("XF") , signature(false), signGrade(150) , executGrade(150)
+Form::Form() : name("XF") , signGrade(150) , executGrade(150),signature(false)
 {
 
 }
 
 Form::Form(const std::string& name, int signGrade, int executGrade, bool signature)
-    : name(name), signature(signature), signGrade(signGrade), executGrade(executGrade) {
+    : name(name),  signGrade(signGrade), executGrade(executGrade), signature(signature) {
 
 }
 
@@ -55,10 +55,31 @@ std::string Form::getName() const
     return this->name;
 }
 
+bool Form::getSignature() const
+{
+    return this->signature;
+}
+
+int Form::getSignGrade() const
+{
+    return this->signGrade;
+}
+
+int Form::getExecuteGrade() const
+{
+    return this->executGrade;
+}
+
 void Form::beSigned(Bureaucrat B)
 {
     if (B.getGrade() <= this->signGrade)
         signature = true;
     else
         throw Form::GradeTooLowException();
+}
+std::ostream & operator<<(std::ostream &o, Form const &f)
+{   o << "\n|-----------------------------------";
+    o << "\n|\tname : " << f.getName() << "\n|\tsignGrade : " << f.getSignGrade() << "\n|\texecuteGrade : " \
+    << f.getExecuteGrade() << "\n|\tsignature : " << f.getSignature() << "\n|-----------------------------------";
+    return o;
 }

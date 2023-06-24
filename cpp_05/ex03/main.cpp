@@ -6,12 +6,13 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 21:31:12 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/22 22:43:38 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 02:43:13 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -21,9 +22,12 @@ int main()
     try{
         Bureaucrat b("harry", 1);
         Bureaucrat B(b);
-        AForm *s = new ShrubberyCreationForm("home");
-        AForm *p = new PresidentialPardonForm("Presedent");
-        AForm *r = new RobotomyRequestForm("Robo");
+        Intern someRondomIntern;
+        
+        AForm *s;
+        s = someRondomIntern.makeForm("Shrubbery-form", "home");
+        AForm *p = someRondomIntern.makeForm("Presidential-form", "bureau");
+        AForm *r = someRondomIntern.makeForm("Robotomy-form", "school");
         b.signForm(*s);
         b.signForm(*p);
         b.signForm(*r);

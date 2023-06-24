@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 21:31:09 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/22 21:21:14 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 01:35:53 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@
             void beSigned(Bureaucrat const & B);
             virtual void execute(Bureaucrat const & executor) const = 0;
             std::string getName() const;
+            bool getSignature() const;
+            int getSignGrade() const;
+            int getExecuteGrade() const;
             class GradeTooLowException : public std::exception
             {
                 public:

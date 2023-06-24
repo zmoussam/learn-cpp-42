@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 18:10:08 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/21 20:44:36 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 01:32:56 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
     {
         private:
             const std::string  name;
-            bool signature;
             int const signGrade;
             const int executGrade;
+            bool signature;
 
         public:
             Form();
@@ -32,6 +32,9 @@
             Form(const std::string & name, int signGrade, int executGrade, bool signature);
             void beSigned(Bureaucrat B);
             std::string getName() const;
+            bool getSignature() const;
+            int getSignGrade() const;
+            int getExecuteGrade() const;
             class GradeTooLowException : public std::exception
             {
                 public:

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 21:31:19 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/22 19:01:40 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 02:08:04 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@
             PresidentialPardonForm(const PresidentialPardonForm &copy);
             PresidentialPardonForm &operator=(const PresidentialPardonForm &copy);
             void execute(Bureaucrat const & executor) const;
+            PresidentialPardonForm * clone(std::string target);
     };
 #endif

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 21:31:22 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/22 22:39:56 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 02:09:55 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,9 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
         else
             std::cout << this->target << " the robotomy has been failed " << std::endl;
     }
+}
+
+RobotomyRequestForm * RobotomyRequestForm::clone(std::string target)
+{
+    return new RobotomyRequestForm(target);
 }
