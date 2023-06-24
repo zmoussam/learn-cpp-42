@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:55:56 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/21 20:45:36 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 16:04:53 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Form;
     class Bureaucrat
     {
         private:
-            std::string name;
+            const std::string name;
             int grade;
         public:
             Bureaucrat();

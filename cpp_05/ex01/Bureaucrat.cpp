@@ -6,16 +6,15 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:48:58 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/24 01:42:50 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 16:06:11 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : name("XB")
 {
-    this->name = "XB";
     this->grade = 150;
 }
     
@@ -24,14 +23,13 @@ Bureaucrat::~Bureaucrat()
     
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy)
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name(copy.name), grade(copy.grade)
 {
-    *this = copy;
+
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
-    this->name = name;
     this->grade = 150;
     this->setGrade(grade);
 }
@@ -41,7 +39,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
     if(this == &copy)
         return *this;
     this->grade = copy.grade;
-    this->name = copy.name;
     return *this;
 }
 
@@ -92,7 +89,7 @@ void Bureaucrat::signForm(Form F)
     }
     catch(std::exception &e)
     {
-        std::cout << *this << " couldn't sign " << F << " because " << e.what() << std::endl;
+        std::cout << *this << " couldn't sign " << F << "\nbecause " << e.what() << std::endl;
     }
 }
 

@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 21:31:12 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/22 22:43:38 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 16:39:00 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,19 @@ int main()
     try{
         Bureaucrat b("harry", 1);
         Bureaucrat B(b);
+        
         AForm *s = new ShrubberyCreationForm("home");
         AForm *p = new PresidentialPardonForm("Presedent");
         AForm *r = new RobotomyRequestForm("Robo");
+       
         b.signForm(*s);
         b.signForm(*p);
         b.signForm(*r);
-        s->beSigned(b);
-        s->execute(b);
+
         b.executeForm(*s);
         b.executeForm(*p);
         b.executeForm(*r);
+        
         // AForm f("certificat", 10, 12, false);
         // AForm g(f);
         // // b.incrementGrade();
@@ -41,7 +43,7 @@ int main()
         // std::cout << B << std::endl;
         // b.signForm(f);
         // b.signForm(g);
-        delete s;
+        // delete s;
         delete p;
         delete r;
     }

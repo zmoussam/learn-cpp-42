@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:55:56 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/21 20:45:19 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 15:44:29 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
     class Bureaucrat
     {
         private:
-            std::string name;
+            const std::string name;
             int grade;
         public:
             Bureaucrat();

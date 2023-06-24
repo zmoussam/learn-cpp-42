@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 21:31:04 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/24 02:01:20 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 17:47:04 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : name("XB")
 {
-    this->name = "XB";
     this->grade = 150;
 }
     
@@ -30,9 +29,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy)
     *this = copy;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
-    this->name = name;
     this->grade = 150;
     this->setGrade(grade);
 }
@@ -42,7 +40,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
     if(this == &copy)
         return *this;
     this->grade = copy.grade;
-    this->name = copy.name;
     return *this;
 }
 

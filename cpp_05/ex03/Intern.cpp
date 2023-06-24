@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 22:53:00 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/24 02:33:50 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 17:44:14 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ Intern & Intern::operator=(const Intern &copy)
    return *this;
 }
 
+const char * Intern::FormNotFount::what() const throw()
+{
+   return "Form Not Found !!!";
+}
+
 AForm * Intern::makeForm(std::string formName, std::string target)
 {
    std::string name[3] = {
@@ -54,7 +59,7 @@ AForm * Intern::makeForm(std::string formName, std::string target)
    cloneFunction[0] = &p;
    cloneFunction[1] = &r;
    cloneFunction[2] = &s;
-
+   
    for (int i = 0; i < 3; i++)
    {
       if (formName == name[i])
@@ -63,5 +68,6 @@ AForm * Intern::makeForm(std::string formName, std::string target)
          return cloneFunction[i]->clone(target);
       }
    }
+   throw Intern::FormNotFount();
    return nullptr;
 }

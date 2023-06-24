@@ -6,20 +6,23 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 18:11:23 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/24 02:02:01 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 16:14:27 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : name("XF") , signGrade(150) , executGrade(150),signature(false)
+Form::Form() : name("XF") , signGrade(150) , executGrade(150), signature(false)
 {
 
 }
 
-Form::Form(const std::string& name, int signGrade, int executGrade, bool signature)
-    : name(name),  signGrade(signGrade), executGrade(executGrade), signature(signature) {
-
+Form::Form(const std::string& name, int signGrade, int executGrade)
+    : name(name),  signGrade(signGrade), executGrade(executGrade), signature(false) {
+    if (signGrade < 1 || executGrade < 1)
+        throw Form::GradTooHighException();
+    else if (signGrade > 150 || executGrade > 150)
+        throw Form::GradeTooLowException();
 }
 
 Form::~Form()
@@ -42,12 +45,12 @@ Form & Form::operator=(const Form &copy)
 
 const char * Form::GradeTooLowException::what() const throw()
 {
-    return "Grade is too low !!";
+    return "Form : Grade is too low !!";
 }
 
 const char * Form::GradTooHighException::what() const throw()
 {
-    return "Grade is too high !!";
+    return "Form : Grade is too high !!";
 }
 
 std::string Form::getName() const

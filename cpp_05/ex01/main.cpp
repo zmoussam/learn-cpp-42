@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:49:01 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/24 01:35:17 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 16:16:15 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
     try{
         Bureaucrat b("harry", 1);
         Bureaucrat B(b);
-        Form f("certificat", 10, 12, false);
+        Form f("certificat", 5, 12);
         Form g(f);
         // b.incrementGrade();
         // b.incrementGrade();

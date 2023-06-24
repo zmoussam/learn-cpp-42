@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 18:10:08 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/24 01:32:56 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 16:11:31 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
             ~Form();
             Form(const Form &copy);
             Form &operator=(const Form &copy);
-            Form(const std::string & name, int signGrade, int executGrade, bool signature);
+            Form(const std::string & name, int signGrade, int executGrade);
             void beSigned(Bureaucrat B);
             std::string getName() const;
             bool getSignature() const;

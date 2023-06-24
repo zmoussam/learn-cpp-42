@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 21:31:06 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/06/24 01:56:13 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/06/24 16:43:25 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ const char * AForm::GradTooHighException::what() const throw()
 {
     return "Grade is too high !!";
 }
+
 const char * AForm::NotSignedExcepion::what() const throw()
 {
     return "Form not signed !!";
