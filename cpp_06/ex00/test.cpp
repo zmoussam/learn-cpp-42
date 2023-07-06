@@ -6,21 +6,15 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 20:40:54 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/05 23:19:02 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/06 22:43:30 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 
-int main()
-{
-    std::string input = "nanf";
-    float d = 0;
-    if (input == "nan") {
-    d = std::numeric_limits<double>::quiet_NaN();
-    std::cout << d << std::endl;
-    } else {
-            std::cout << "double: impossible" << std::endl;
-        }
-}
+// int main()
+// {
+//     std::string str = "42.";
+//     std::cout << str.substr(3) << std::endl;
+// }

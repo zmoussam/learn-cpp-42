@@ -6,11 +6,12 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:10:06 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/05 21:49:02 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/06 21:59:44 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include "Utils.hpp"
 
 ScalarConverter::ScalarConverter(/* args */)
 {
@@ -35,60 +36,8 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &copy)
 
 void ScalarConverter::convert(std::string argument)
 {
-    char c;
-    int integer;
-    float f;
-    double d;
-    
-    //check if the argument is nan
-    if (argument == "nan")
-    {
-        std::cout << "char : impossible" << std::endl;
-        std::cout << "int : impossible" << std::endl;
-        std::cout << "float : nanf" << std::endl;
-        std::cout << "double : nan" << std::endl;
-    }
-    else if (argument == "nanf")
-    {
-        std::cout << "char : impossible" << std::endl;
-        std::cout << "int : impossible" << std::endl;
-        std::cout << "float : nanf" << std::endl;
-        std::cout << "double : nan" << std::endl;
-    }
-    else if (argument == "-inff")
-    {
-        std::cout << "char : impossible" << std::endl;
-        std::cout << "int : impossible" << std::endl;
-        std::cout << "float : -inff" << std::endl;
-        std::cout << "double : -inf" << std::endl;
-    }
-    else if (argument == "+inff")
-    {
-        std::cout << "char : impossible" << std::endl;
-        std::cout << "int : impossible" << std::endl;
-        std::cout << "float : nanf" << std::endl;
-        std::cout << "double : nan" << std::endl;
-    }
-    else if (argument == "-inf")
-    {
-        std::cout << "char : impossible" << std::endl;
-        std::cout << "int : impossible" << std::endl;
-        std::cout << "float : nanf" << std::endl;
-        std::cout << "double : nan" << std::endl;
-    }
-    else if (argument == "+inf")
-    {
-        std::cout << "char : impossible" << std::endl;
-        std::cout << "int : impossible" << std::endl;
-        std::cout << "float : nanf" << std::endl;
-        std::cout << "double : nan" << std::endl;
-    }
-    //check if the argument is an char 
-    // else if (argument.length() == 3 && argument[0] == '\'' && argument[2] == '\'')
-        //convert char
-    
-    // std::cout << "char : " << argument << std::endl;
-    // std::cout << "int : " << argument << std::endl;
-    // std::cout << "float : " << argument << std::endl;
-    // std::cout << "double : " << argument << std::endl;
+    Utils::to_char(argument);
+    // Utils::to_int(argument);
+    // Utils::to_float(argument);
+    // Utils::to_double(argument);
 }

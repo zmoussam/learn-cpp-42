@@ -6,28 +6,27 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 20:36:26 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/05 21:43:45 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/06 22:42:25 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS__
 #define UTILS__
+#include <iostream>
+#include <string>
 
     class Utils
     {
-        private:
-            /* data */
         public:
-            Utils(/* args */);
+            Utils();
             ~Utils();
+            static void to_char(const std::string &input);
+            // static void to_int(const std::string &input);
+            // static void to_float(const std::string &input);
+            // static void to_double(const std::string &input);
+            static bool is_all_digits(const std::string &input);
+            static bool is_fractionel(const std::string &input);
+            static int countElemen(const std::string &input, const char to_cout);
     };
-    
-    Utils::Utils(/* args */)
-    {
-    }
-    
-    Utils::~Utils()
-    {
-    }
-    
+
 #endif
