@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 20:36:29 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/06 23:00:42 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/06 23:24:02 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int Utils::countElemen(const std::string &input, const char to_cout)
     {
         if (input[i] == to_cout)
             count++;
+        else if (!std::isdigit(input[i]) && input[i] != 'f')
+            return -1;
     }
     return count;
 }
@@ -44,16 +46,16 @@ int Utils::countElemen(const std::string &input, const char to_cout)
 bool Utils::is_fractionel(const std::string &input)
 {
     size_t found = input.find(".");
+    size_t count;
     if (found == std::string::npos)
         return false;
-    else if (!Utils::is_all_digits(input.substr(0, found)))
+    else if (!Utils::is_all_digits(input.substr(0, found)) || input.substr(found + 1).length() == 0)
         return false;
-        // check the fract part if contain all digit and f!!
     else
     {
-        if (Utils::countElemen(input.substr(found + 1), '.') == 0 \
-        && ((Utils::countElemen(input.substr(found + 1), 'f') == 1 && input[input.length() - 1] == 'f') \
-        || Utils::countElemen(input.substr(found + 1), 'f') == 0))
+        count = Utils::countElemen(input.substr(found + 1), 'f');
+        if ((count == 1 && input[input.length() - 1] == 'f') \
+        || count == 0 )
             return true;
     }
     return false;
@@ -83,7 +85,7 @@ void Utils::to_char(const std::string &input)
 
 // void Utils::to_int(const std::string &input)
 // {
-
+//     if (Utils::is_all_digits(input))
 // }
 
 // void Utils::to_float(const std::string &input)
