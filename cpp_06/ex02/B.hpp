@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 16:49:27 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/07 21:30:37 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/07/07 21:49:19 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/07/07 21:49:48 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA__
-#define DATA__
+#ifndef B__
+#define B__
+#include "Base.hpp"
 
-struct  Data
-{
-    int data;
-};
-
+    class B : public Base
+    {
+        public:
+            B();
+            ~B();
+    };
+    
 #endif

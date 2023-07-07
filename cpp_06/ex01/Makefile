@@ -6,10 +6,11 @@
 #    By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 16:51:32 by zmoussam          #+#    #+#              #
-#    Updated: 2023/07/07 20:23:00 by zmoussam         ###   ########.fr        #
+#    Updated: 2023/07/07 21:26:16 by zmoussam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = *.cpp 
 NAME = Serializer
