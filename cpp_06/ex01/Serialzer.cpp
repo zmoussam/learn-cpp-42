@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalartConverter.cpp                               :+:      :+:    :+:   */
+/*   Serialzer.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/25 17:10:06 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/07 16:33:22 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/07/07 16:51:54 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/07/07 20:56:31 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
-#include "Utils.hpp"
+#include "Serializer.hpp"
 
-ScalarConverter::ScalarConverter()
-{
-
-}
-    
-ScalarConverter::~ScalarConverter()
+Serializer::Serializer()
 {
 
 }
 
-ScalarConverter::ScalarConverter(const ScalarConverter &copy)
+Serializer::~Serializer()
+{
+
+}
+
+Serializer::Serializer(const Serializer &copy)
 {
     *this = copy;
 }
 
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &copy)
+Serializer &Serializer::operator=(const Serializer &copy)
 {
     (void)copy;
-    return  *this;
+    return *this;
+}
+uintptr_t Serializer::Serialize(Data *ptr)
+{
+    return reinterpret_cast<uintptr_t>(ptr);
 }
 
-void ScalarConverter::convert(std::string argument)
+Data *Serializer::deserialize(uintptr_t raw)
 {
-    Utils::to_char(argument);
-    Utils::to_int(argument);
-    Utils::to_float(argument);
-    Utils::to_double(argument);
+    return reinterpret_cast<Data*>(raw);
 }

@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 20:40:54 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/06 22:43:30 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/07/07 16:43:31 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/07/07 21:01:44 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SERIALIZER__
+#define SERIALIZER__
 #include <iostream>
-#include <string>
+#include "Data.hpp"
+#include <cstdint>
 
-// int main()
-// {
-//     std::string str = "42.";
-//     std::cout << str.substr(3) << std::endl;
-// }
+    class Serializer
+    {       
+        public:
+            Serializer();
+            ~Serializer();
+            Serializer(const Serializer &copy);
+            Serializer &operator=(const Serializer &copy);
+            static uintptr_t Serialize(Data *ptr);
+            static Data *deserialize(uintptr_t raw);
+    };
+
+#endif
