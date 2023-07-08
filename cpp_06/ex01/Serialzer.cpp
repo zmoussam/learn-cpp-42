@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 16:51:54 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/07 21:21:02 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/08 14:42:53 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Serializer &Serializer::operator=(const Serializer &copy)
     (void)copy;
     return *this;
 }
+
 uintptr_t Serializer::Serialize(Data *ptr)
 {
     return reinterpret_cast<uintptr_t>(ptr);

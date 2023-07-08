@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 21:41:51 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/07 21:50:13 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/08 13:47:50 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #define C__
 #include "Base.hpp"
 
-    class C : public Base
-    {
-        public:
-            C();
-            ~C();
-    };
+    class C : public Base { };
     
 #endif

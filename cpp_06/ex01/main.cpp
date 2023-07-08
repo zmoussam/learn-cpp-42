@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:31:17 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/07 21:33:07 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/08 14:43:24 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ int main()
 {
 
     Data *ptr = new Data;
-    ptr->data = 42;
+    ptr->data = 0;
+    
     uintptr_t u = Serializer::Serialize(ptr);
-
-
     std::cout << u << std::endl;
+
     Data *t = Serializer::deserialize(u);
-    std::cout << t->data << std::endl;
+    if (t)
+        std::cout << t->data << std::endl;
+    
     delete ptr;
 }

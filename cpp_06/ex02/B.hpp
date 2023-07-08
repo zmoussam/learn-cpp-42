@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 21:49:19 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/07 21:49:48 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/08 13:47:41 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #define B__
 #include "Base.hpp"
 
-    class B : public Base
-    {
-        public:
-            B();
-            ~B();
-    };
+    class B : public Base {};
     
 #endif
