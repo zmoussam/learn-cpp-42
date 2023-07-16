@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   template.hpp                                       :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zmoussam <zakaria@student.42.fr>            +#+  +:+       +#+        */
+/*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 20:39:06 by zakaria           #+#    #+#             */
-/*   Updated: 2023/07/13 20:39:22 by zakaria          ###   ########.fr       */
+/*   Created: 2023/07/15 14:51:27 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/07/15 15:11:43 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ void swap(T &a, T &b)
 }
 
 template<typename T>
-T min(T a, T b)
+T min(T const &a, T const &b)
 {
     return (a < b ? a : b);
 }
 
 template<typename T>
-T max(T a, T b)
+T max(T const &a, T const &b)
 {
     return (a > b ? a : b);
 }

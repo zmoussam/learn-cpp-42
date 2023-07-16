@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zakaria <zakaria@student.42.fr>            +#+  +:+       +#+         #
+#    By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/13 21:25:14 by zakaria           #+#    #+#              #
-#    Updated: 2023/07/13 21:25:19 by zakaria          ###   ########.fr        #
+#    Created: 2023/07/15 18:04:44 by zmoussam          #+#    #+#              #
+#    Updated: 2023/07/15 18:10:43 by zmoussam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = *.cpp 
-NAME = Bureaucrat
+SRC = main.cpp 
+NAME = array
 
 OBJ := ${SRC:.cpp=.o}
 
