@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:08:37 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/15 20:04:50 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/16 18:32:35 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class Array
                 this->arr[i] = copy.arr[i];
             return (*this);
         }
-
+  
         T &operator[](unsigned int index)
         {
             if (index < 0 || index >= this->arrLength)
