@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:08:37 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/16 18:32:35 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/24 18:51:35 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ class Array
         {
             delete this->arr;
         }
+        
         size_t size() const
         {
             return this->arrLength;
