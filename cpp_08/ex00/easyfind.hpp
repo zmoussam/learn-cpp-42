@@ -6,12 +6,13 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 17:10:35 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/24 23:01:09 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:01:31 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND__
 #define EASYFIND__
+#include <iostream>
 
 template<typename T>
 int &easyfind(T _container, int _value)
