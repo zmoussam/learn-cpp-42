@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 17:10:50 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/26 04:00:05 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/26 15:04:09 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,19 @@ int Span::shortestSpan()
             min = s[i] - s[i - 1];
     }
     return min;
+}
+
+void Span::addNumbers(std::vector<int>::iterator _begin, std::vector<int>::iterator _end)
+{
+    for (; _begin != _end; _begin++)
+        this->addNumber(*_begin);
+}
+
+void Span::printVector()
+{
+    std::vector<int>::iterator it = this->_container.begin();
+
+    for (; it != this->_container.end(); it++)
+        std::cout << *it << " ";
+    std::cout << std::endl;
 }
