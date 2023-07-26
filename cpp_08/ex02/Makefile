@@ -6,13 +6,13 @@
 #    By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/16 17:11:00 by zmoussam          #+#    #+#              #
-#    Updated: 2023/07/26 15:12:31 by zmoussam         ###   ########.fr        #
+#    Updated: 2023/07/26 20:29:24 by zmoussam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp Span.cpp
+SRC = main.cpp 
 NAME = span
 
 OBJ := ${SRC:.cpp=.o}
