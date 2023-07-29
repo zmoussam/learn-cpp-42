@@ -5,21 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/27 01:09:38 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/28 19:57:53 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/07/28 20:03:25 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/07/28 23:28:27 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "PmergeMe.hpp"
+#include <iostream>
+#include <vector>
+#include <list>
 
 int main(int ac, char **av)
 {
-
-    if(ac != 2)
-        std::cerr <<  "Error : could not open file. " << std::endl;
-    else
+    std::vector<unsigned int> vec;
+    std::list<unsigned int> lst; 
+    if (ac >= 2)
     {
-        std::map<std::string, float> data = BitcoinExchange::getData("data.csv");
-        BitcoinExchange::__result(std::string(av[1]), data);
+        if (__getContainers(vec, lst, av))
+        {
+            std::list<unsigned int>::iterator it = lst.begin(); 
+            std::cout << "before: "; 
+            for (; it != lst.end(); it++)
+            {
+                std::cout << *it << " ";
+            }    
+        }
     }
 }

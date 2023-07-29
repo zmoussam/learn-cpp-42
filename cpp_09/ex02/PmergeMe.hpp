@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/27 20:11:56 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/28 19:58:51 by zmoussam         ###   ########.fr       */
+/*   Created: 2023/07/28 20:03:32 by zmoussam          #+#    #+#             */
+/*   Updated: 2023/07/28 22:29:44 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RPN__
-#define RPN__
-#include <string>
+#ifndef PMERGEME__
+#define PMERGEME__
 #include <iostream>
-#include <stack>
+#include <string>
+#include <vector>
+#include <list>
 
-    class RPN
-    {
-        private: 
-            RPN();
-            RPN(const RPN &copy);
-            RPN &operator=(const RPN &copy);
-            ~RPN();
-            
-        public :
-            static bool __checkarg(std::string _arg);
-            static bool isOperator(char c);
-            static bool callcule(std::stack<int> &numbersStack, char __op);
-    };
+bool __isNumber(std::string _arg);
+bool __getContainers(std::vector<unsigned int> &_vec, std::list<unsigned int> &_lst, char **av);
 
 #endif

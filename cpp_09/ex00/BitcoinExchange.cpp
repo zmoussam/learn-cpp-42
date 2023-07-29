@@ -6,14 +6,19 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 01:09:33 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/28 01:35:50 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/28 19:53:36 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 #include <cstdio>
 
-std::map<std::string , float> getData(std::string dataFileName)
+BitcoinExchange::BitcoinExchange(){}
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy){ *this = copy; }
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &copy) {(void)copy; return *this; };
+BitcoinExchange::~BitcoinExchange(){};
+
+std::map<std::string , float> BitcoinExchange::getData(std::string dataFileName)
 {
     std::ifstream dataFile;
     std::string _line;
@@ -36,7 +41,7 @@ std::map<std::string , float> getData(std::string dataFileName)
     } 
     return __result;
 }
-void parsseHeader(std::istream &_inputDataFile)
+void BitcoinExchange::parsseHeader(std::istream &_inputDataFile)
 {
     std::string _line;
     std::string header = "";
@@ -53,12 +58,12 @@ void parsseHeader(std::istream &_inputDataFile)
         std::cout << "date | value " << std::endl;
 }
 
-bool isLeapYear(int year)
+bool BitcoinExchange::isLeapYear(int year)
 {
     return ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
 }
 
-bool isValidDate(std::string date)
+bool BitcoinExchange::isValidDate(std::string date)
 {
     int year, month, day;
 
@@ -75,11 +80,11 @@ bool isValidDate(std::string date)
         return false;
     if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31 || (month == 2 && day > 29))
         return false;
-    if (month == 2 && day == 29 && !isLeapYear(year))
+    if (month == 2 && day == 29 && !BitcoinExchange::isLeapYear(year))
         return false;
     return true;
 }
-std::string trimInput(std::string input)
+std::string BitcoinExchange::trimInput(std::string input)
 {
     size_t start = input.find_first_not_of(" ");
     size_t end = input.find_last_not_of(" ");
@@ -88,7 +93,7 @@ std::string trimInput(std::string input)
     return (input.substr(start, end - start + 1));
 }
 
-void printResult(std::string _dataline, std::map<std::string , float> data)
+void BitcoinExchange::printResult(std::string _dataline, std::map<std::string , float> data)
 {
     float _value;
     std::string _date = "";
@@ -98,7 +103,7 @@ void printResult(std::string _dataline, std::map<std::string , float> data)
         std::cerr << "Error: bad input => " << _dataline << std::endl;
     else
     {
-        _date = trimInput(_dataline.substr(0, pipePos));
+        _date = BitcoinExchange::trimInput(_dataline.substr(0, pipePos));
         if (!isValidDate(_date))
             std::cerr << "Error: bad input => " << _dataline << std::endl;
         else if (std::sscanf(_dataline.substr(pipePos + 1).c_str(), "%f%1s", &_value, _check) != 1)
@@ -117,7 +122,7 @@ void printResult(std::string _dataline, std::map<std::string , float> data)
         }
     }
 }
-void __result(std::string __inputFileName, std::map<std::string, float> data)
+void BitcoinExchange::__result(std::string __inputFileName, std::map<std::string, float> data)
 {
     std::ifstream inputFile;
     std::string _line;
@@ -130,14 +135,14 @@ void __result(std::string __inputFileName, std::map<std::string, float> data)
         std::cerr << "Error can't open file." << std::endl;
     else
     {
-        parsseHeader(inputFile);
+        BitcoinExchange::parsseHeader(inputFile);
         while (std::getline(inputFile, _line))
         {
-            _trimedLine = trimInput(_line);
+            _trimedLine = BitcoinExchange::trimInput(_line);
             if (_trimedLine == "" || _trimedLine == "\n")
                 continue;
             else 
-                printResult(_trimedLine, data);
+                BitcoinExchange::printResult(_trimedLine, data);
         }
         inputFile.close();
     }
