@@ -6,18 +6,20 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 01:09:33 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/28 19:53:36 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/29 17:28:32 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 #include <cstdio>
 
+
 BitcoinExchange::BitcoinExchange(){}
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy){ *this = copy; }
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &copy) {(void)copy; return *this; };
 BitcoinExchange::~BitcoinExchange(){};
 
+// read the data file and store the data in map<string , float> container
 std::map<std::string , float> BitcoinExchange::getData(std::string dataFileName)
 {
     std::ifstream dataFile;
@@ -41,6 +43,8 @@ std::map<std::string , float> BitcoinExchange::getData(std::string dataFileName)
     } 
     return __result;
 }
+
+//check if the header (date | value) valide or not
 void BitcoinExchange::parsseHeader(std::istream &_inputDataFile)
 {
     std::string _line;
@@ -58,11 +62,13 @@ void BitcoinExchange::parsseHeader(std::istream &_inputDataFile)
         std::cout << "date | value " << std::endl;
 }
 
+// return true if the year is a leap year or not
 bool BitcoinExchange::isLeapYear(int year)
 {
     return ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
 }
 
+// check if a given date is in the correct format or not "YYYY-MM-DD"
 bool BitcoinExchange::isValidDate(std::string date)
 {
     int year, month, day;
@@ -84,6 +90,8 @@ bool BitcoinExchange::isValidDate(std::string date)
         return false;
     return true;
 }
+
+// remove the spaces in the input from the begin and the end  
 std::string BitcoinExchange::trimInput(std::string input)
 {
     size_t start = input.find_first_not_of(" ");
@@ -122,6 +130,7 @@ void BitcoinExchange::printResult(std::string _dataline, std::map<std::string , 
         }
     }
 }
+
 void BitcoinExchange::__result(std::string __inputFileName, std::map<std::string, float> data)
 {
     std::ifstream inputFile;
@@ -136,7 +145,7 @@ void BitcoinExchange::__result(std::string __inputFileName, std::map<std::string
     else
     {
         BitcoinExchange::parsseHeader(inputFile);
-        while (std::getline(inputFile, _line))
+        while (std::getline(inputFile, _line)) 
         {
             _trimedLine = BitcoinExchange::trimInput(_line);
             if (_trimedLine == "" || _trimedLine == "\n")
