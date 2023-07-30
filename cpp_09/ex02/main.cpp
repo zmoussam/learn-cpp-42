@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 20:03:25 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/30 02:25:51 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/30 23:46:59 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,94 +16,122 @@
 #include <list>
 
 
-std::vector<std::pair<unsigned int, unsigned int> > __getPairVec(std::vector<unsigned int> _vec)
+void printvec(std::vector<unsigned int> _vec)
+{
+    std::vector<unsigned int>::iterator itt = _vec.begin();
+    for (; itt != _vec.end(); itt++)
+    {
+        std::cout << *itt << " " ;
+    }
+    std::cout << std::endl;
+}
+
+std::list<std::pair<unsigned int, unsigned int> > __getPairList(std::list<unsigned int> _lst)
 {
     size_t j = 0;
-    size_t len = _vec.size();
-    std::vector<std::pair<unsigned int, unsigned int> > _result(len / 2);
-    
-    for (size_t i = 0; i < len ; i++)
+    size_t len = _lst.size();
+    std::list<std::pair<unsigned int, unsigned int> > _result(len / 2);
+    std::list<unsigned int>::iterator it = _lst.begin();
+    std::list<std::pair<unsigned int , unsigned int> >::iterator r_it = _result.begin();
+
+    for (; it != _lst.end() ; it++)
     {
-        if (_vec[i] < _vec[i + 1])
+        if (*it < *it + 1)
         {
-            _result[j].second = _vec[i];
-            _result[j].first = _vec[++i];
+            r_it->second = *it;
+            r_it->first = *(++it);
         }
         else
         {
-            _result[j].first = _vec[i];
-            _result[j].second = _vec[++i];
+            r_it->first = *it;
+            r_it->second = *(++it);
         }
-        j++;
+        r_it++;
     }
     return _result;
 }
 
-void merge(std::vector<std::pair<unsigned int, unsigned int> > leftArray, \
-std::vector<std::pair<unsigned int, unsigned int> > rightArray, \
-std::vector<std::pair<unsigned int, unsigned int> > &baseArray)
+void __pairList_sort(std::list<std::pair<unsigned int, unsigned int> > leftList, \
+std::list<std::pair<unsigned int, unsigned int> > rightList, \
+std::list<std::pair<unsigned int, unsigned int> > &baseList)
 {
-    size_t l_len = baseArray.size() / 2;
-    size_t r_len = baseArray.size() - l_len;
-    size_t i = 0;
-    size_t l = 0;
-    size_t r = 0;
+    std::list<std::pair<unsigned int, unsigned int> >::iterator base_it = baseList.begin();
+    std::list<std::pair<unsigned int, unsigned int> >::iterator l_it = leftList.begin();
+    std::list<std::pair<unsigned int, unsigned int> >::iterator r_it = rightList.begin();
 
-    while(l < l_len && r < r_len)
+    while(l_it != leftList.end() && r_it != rightList.end())
     {
-        if (leftArray[l].first < rightArray[r].first)
-            baseArray[i++] = leftArray[l++];
+        if (l_it->first < r_it->first)
+        {
+            *base_it = *l_it;
+            base_it++;
+            l_it++;
+        }
         else
-            baseArray[i++] = rightArray[r++];
+        {
+            *base_it = *r_it;
+            base_it++;
+            r_it++;
+        }
     }
-    for(; l < l_len; l++)
-        baseArray[i++] = leftArray[l];
+    for(; l_it != leftList.end(); l_it++)
+    {
+        *base_it = *l_it;
+        base_it++;
+    }
 
-    for(; r < r_len ; r++)
-        baseArray[i++] = rightArray[r];
+    for(; r_it != rightList.end() ; r_it++)
+    {
+        *base_it = *r_it;
+        base_it++;
+    }
 }
 
-void __mergesort(std::vector<std::pair<unsigned int, unsigned int> > &pairVec) 
+void  __recursivelysort_List(std::list<std::pair<unsigned int, unsigned int> > &pairList) 
 {
-    size_t len = pairVec.size();
+    size_t len = pairList.size();
     if (len <= 1)
         return;
 
+    std::list<std::pair<unsigned int, unsigned int> >::iterator it = pairList.begin();
+    std::list<std::pair<unsigned int, unsigned int> > leftList;
+    std::list<std::pair<unsigned int, unsigned int> > rightList;
     size_t middle = len / 2;
-    std::vector<std::pair<unsigned int, unsigned int> > leftArray(middle);
-    std::vector<std::pair<unsigned int, unsigned int> > rightArray(len - middle);
     
-    size_t j = 0;
-    for (size_t i = 0; i < len; i++)
+    size_t i = 0;
+
+    for (; it != pairList.end(); it++)
     {
         if (i < middle)
-            leftArray[i] = pairVec[i];
+            leftList.push_back(*it);
         else
-        {
-            rightArray[j] = pairVec[i];
-            j++;
-        }
+            rightList.push_back(*it);
+        i++;
     }
-    __mergesort(leftArray);
-    __mergesort(rightArray);
+     __recursivelysort_List(leftList);
+    __recursivelysort_List(rightList);
 
-    merge(leftArray, rightArray, pairVec);
+    __pairList_sort(leftList, rightList, pairList);
     
 }
 
-std::pair<std::vector<unsigned int>, std::vector<unsigned int> > __get_mainChain_pend(\
-std::vector<std::pair<unsigned int, unsigned int> > pairVec)
+std::pair<std::list<unsigned int>, std::list<unsigned int> > __get_mainChain_pend(\
+std::list<std::pair<unsigned int, unsigned int> > pairList)
 {
-    size_t vecLength = pairVec.size();
-    std::pair<std::vector<unsigned int> , std::vector<unsigned int> > __result;
+    std::pair<std::list<unsigned int> , std::list<unsigned int> > __result;
+    std::list<std::pair<unsigned int, unsigned int> >::iterator pairlist_it = pairList.begin();
 
-    __result.first.push_back(pairVec[0].second);
-    __result.first.push_back(pairVec[0].first);
-
-    for (size_t i = 1; i < vecLength; i++)
+    if (!pairList.empty())
     {
-        __result.first.push_back(pairVec[i].first);
-        __result.second.push_back(pairVec[i].second);
+        __result.first.push_back(pairlist_it->second);
+        __result.first.push_back(pairlist_it->first);
+        pairlist_it++;
+    }
+
+    for (; pairlist_it != pairList.end(); pairlist_it++)
+    {
+        __result.first.push_back(pairlist_it->first);
+        __result.second.push_back(pairlist_it->second);
     }
     return __result;
 }
@@ -129,24 +157,20 @@ std::vector<unsigned int> jacobsthalNumbers(unsigned int n)
 }
 
 
-std::vector<unsigned int> __getInsertionOrder(std::vector<unsigned int> jacobsthalnumber, \
-std::pair<std::vector<unsigned int>, std::vector<unsigned int> > mainChain_pend,\
- std::vector<unsigned int>)
+std::list<unsigned int> __merge_insert_sort(std::vector<unsigned int> jacobsthalnumber, \
+std::pair<std::list<unsigned int>, std::list<unsigned int> > mainChain_pend,\
+std::list<unsigned int>)
 {
     size_t pendSize = mainChain_pend.second.size();
-    size_t i = 0;
-
-    // if (jacobsthalnumber.empty()) you check this to avoid any segfault
+    size_t j_size = jacobsthalnumber.size();
+    size_t top = 3, i = 0, j = 0;
     
-    size_t top = jacobsthalnumber[0];
-    size_t j = 0;
-    while (i < pendSize)
+    while (i < j_size || j_size == 0)
     {
-        if (top <= pendSize)
+        if (top < pendSize)
         {
             mainChain_pend.first.insert(std::lower_bound(mainChain_pend.first.begin(), \
-            mainChain_pend.first.end(), mainChain_pend.second[top - 2]),mainChain_pend.second[top - 2]);
-            i++;
+            mainChain_pend.first.end(), mainChain_pend.second[top]), mainChain_pend.second[top]);
         }
         while (j < top && j < pendSize)
         {
@@ -154,65 +178,51 @@ std::pair<std::vector<unsigned int>, std::vector<unsigned int> > mainChain_pend,
             mainChain_pend.first.end(), mainChain_pend.second[j]), mainChain_pend.second[j]);
             j++;
         }
-        i++;
-         if (i < jacobsthalnumber.size())
-            top = jacobsthalnumber[i];
-        std::cout << "top : " << top << std::endl;
+        if (j_size == 0)
+            break;
+        j++;
+        i++;        
+        top = jacobsthalnumber[i];
     }
     return mainChain_pend.first;
 }
 
-// run the code with /PmergeMe 7 8 27 100 11 46 2 53 0 875 975 656 99999 you have error in pend and main chain 
+std::list<unsigned int> __sort_list(char **av, double &process_time)
+{
+    std::pair<std::list<unsigned int>, std::list<unsigned int> > mainChain_pend;
+    std::list<std::pair<unsigned int, unsigned int> > pairlst;
+    std::list<unsigned int> lst;
+    unsigned int struggler;
+    bool check  = false;
+    process_time = 0;
+    if (__getContainers(lst, av))
+    {
+        if (lst.size() % 2 != 0)
+        {
+            check = true;
+            struggler = lst.back();
+            lst.pop_back();
+        }
+        pairlst = __getPairList(lst);
+        __recursivelysort_List(pairlst);
+        mainChain_pend = __get_mainChain_pend(pairlst);
+        lst = __merge_insert_sort(jacobsthalNumbers(mainChain_pend.second.size()), mainChain_pend, lst);
+        if (check)
+            vec.insert(std::lower_bound(vec.begin(), vec.end(), struggler), struggler);
+    }
+    return lst;
+}
+
 int main(int ac, char **av)
 {
     std::vector<unsigned int> vec;
-    std::pair<std::vector<unsigned int>, std::vector<unsigned int> > mainChain_pend;
     std::list<unsigned int> lst;
-    std::vector<unsigned int> _insertionOrder;
-    unsigned int struggler;
-    bool check = false;
+    double vector_process;
+    // double list_process;
     if (ac >= 2)
     {
-        std::vector< std::pair<unsigned int, unsigned int> > pairVec;
-        if (__getContainers(vec, lst, av))
-        {
-            if (vec.size() % 2 != 0)
-            {
-                check = true;
-                struggler = vec.back();
-                vec.pop_back();
-            }
-            pairVec =  __getPairVec(vec);
-            __mergesort(pairVec);
-            mainChain_pend = __get_mainChain_pend(pairVec);
-            vec = __getInsertionOrder(jacobsthalNumbers(mainChain_pend.second.size()), mainChain_pend, vec);
-            std::vector<std::pair<unsigned int, unsigned int> >::iterator it = pairVec.begin(); 
-            std::cout << "before: " ; 
-            for (; it != pairVec.end(); it++)
-            {
-                std::cout <<  "<" << it->first << " , " << it->second << ">  ";
-            }
-
-            std::vector<unsigned int>::iterator itt = mainChain_pend.first.begin();
-            std::cout << std::endl << "main chain : "; 
-            for (; itt != mainChain_pend.first.end(); itt++)
-            {
-                std::cout << *itt << " " ;
-            }
-
-            std::vector<unsigned int>::iterator ittt = mainChain_pend.second.begin();
-            std::cout << std::endl << "pend : "; 
-            for (; ittt != mainChain_pend.second.end(); ittt++)
-            {
-                std::cout << *ittt << " " ;
-            }
-
-            std::vector<unsigned int>::iterator itttt = vec.begin();
-            std::cout << std::endl << "sort : "; 
-            for (; itttt != vec.end(); itttt++)
-            {
-                std::cout << *itttt << " " ;
-            }
-        }
+        vec = __sort_vector(av, vector_process);
+        printvec(vec);
+        
     }
 }

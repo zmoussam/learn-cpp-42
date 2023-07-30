@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 20:03:32 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/28 22:29:44 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/30 20:28:28 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,30 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <sstream>
 
 bool __isNumber(std::string _arg);
-bool __getContainers(std::vector<unsigned int> &_vec, std::list<unsigned int> &_lst, char **av);
+
+template<typename _containers >
+bool __getContainers(_containers &_container, char **av)
+{
+    unsigned int num;
+    int i = 1;
+    while (av[i])
+    {
+        std::istringstream str(av[i]);
+        if (__isNumber(std::string(av[i])) &&  str >> num)
+        {
+            _container.push_back(num);
+        }
+        else 
+            return (std::cerr << "Error" << std::endl , false);
+        i++;
+    }
+    return true;
+}
+
+std::vector<unsigned int> __sort_vector(char **av, double &process_time);
+// double __sort_list();
 
 #endif
