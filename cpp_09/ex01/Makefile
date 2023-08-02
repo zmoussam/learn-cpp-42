@@ -6,12 +6,12 @@
 #    By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/27 04:55:07 by zmoussam          #+#    #+#              #
-#    Updated: 2023/07/28 01:16:07 by zmoussam         ###   ########.fr        #
+#    Updated: 2023/08/01 20:52:25 by zmoussam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 
 SRC = *.cpp 
 NAME = RPN 
 
@@ -23,7 +23,7 @@ all: ${NAME}
 	$(CC) -c $(FLAGS) ${SRC}
 	
 ${NAME}: ${OBJ}
-	$(CC) -o ${NAME} ${OBJ} 
+	$(CC) $(FLAGS) -o ${NAME} ${OBJ} 
 	
 clean:
 	rm -rf ${OBJ}

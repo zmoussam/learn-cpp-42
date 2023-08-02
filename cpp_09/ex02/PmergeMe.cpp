@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 20:03:34 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/31 03:56:09 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/08/01 20:44:35 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,9 @@ std::pair<std::vector<unsigned int>, std::vector<unsigned int> > mainChain_pend,
         if (j_size == 0)
             break;
         j++;
-        i++;        
-        top = jacobsthalnumber[i];
+        i++;
+        if (i < j_size)     
+            top = jacobsthalnumber[i];
     }
     return mainChain_pend.first;
 }
@@ -363,8 +364,9 @@ std::list<unsigned int>)
             break;
         pend_it++;
         j++;
-        i++;        
-        top = jacobsthalnumber[i];
+        i++;   
+        if (i < j_size)    
+            top = jacobsthalnumber[i];
     }
     return mainChain_pend.first;
 }

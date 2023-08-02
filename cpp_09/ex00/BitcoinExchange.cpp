@@ -6,7 +6,7 @@
 /*   By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 01:09:33 by zmoussam          #+#    #+#             */
-/*   Updated: 2023/07/29 17:28:32 by zmoussam         ###   ########.fr       */
+/*   Updated: 2023/07/31 18:05:46 by zmoussam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ std::map<std::string , float> BitcoinExchange::getData(std::string dataFileName)
             __result[std::string(date)] = _value;
         }
         dataFile.close();
-    } 
+    }
     return __result;
 }
 

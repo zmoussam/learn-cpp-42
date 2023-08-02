@@ -6,12 +6,12 @@
 #    By: zmoussam <zmoussam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/28 20:03:28 by zmoussam          #+#    #+#              #
-#    Updated: 2023/07/30 20:07:52 by zmoussam         ###   ########.fr        #
+#    Updated: 2023/08/01 20:55:42 by zmoussam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 
 SRC = *.cpp 
 NAME = PmergeMe
 
@@ -23,7 +23,7 @@ all: ${NAME}
 	$(CC) -c $(FLAGS) ${SRC}
 	
 ${NAME}: ${OBJ}
-	$(CC) -o ${NAME} ${OBJ} 
+	$(CC) $(FLAGS) -o ${NAME} ${OBJ} 
 	
 clean:
 	rm -rf ${OBJ}
