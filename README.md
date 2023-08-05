@@ -1,5 +1,6 @@
 # cpp_42
 # C++ Exercises and Object-Oriented Programming (OOP) Concepts
+<img width="1023" alt="Screen Shot 2023-08-05 at 5 31 49 PM" src="https://github.com/zmoussam/cpp_42/assets/90983110/450b0a02-9e4f-4583-a0e5-8c3bf2fa8eff">
 
 Welcome to the C++ (42-Network) Exercises and Object-Oriented Programming Concepts repository! This repository is designed to help learners practice their C++ programming skills from the ground up, covering the fundamentals and progressing through various Object-Oriented Programming concepts.
 
